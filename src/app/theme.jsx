@@ -1,7 +1,7 @@
 // theme.js
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     mode: 'light',
     primary: { 
@@ -100,15 +100,34 @@ const theme = createTheme({
           borderRadius: 8,
           fontWeight: 600,
           padding: '10px 24px',
-        },
-        containedPrimary: {
-          background: 'linear-gradient(45deg, #0064d7 30%, #42a5f5 90%)',
-          boxShadow: '0 3px 5px 2px rgba(0, 100, 215, .3)',
-          '&:hover': {
-            background: 'linear-gradient(45deg, #1976d2 30%, #0064d7 90%)',
+          // Improve keyboard focus visibility
+          '&:focus-visible': {
+            outline: '3px solid rgba(0,100,215,0.18)',
+            outlineOffset: '3px',
           },
         },
+        containedPrimary: {
+          // Use gradient but keep sufficient contrast and reduced shadow for accessibility
+          background: 'linear-gradient(45deg, #005bb5 30%, #2f8fe6 90%)',
+          boxShadow: '0 2px 6px rgba(0,0,0,0.12)',
+          '&:hover': {
+            background: 'linear-gradient(45deg, #004a9a 30%, #2377d1 90%)',
+          },
+          '&:focus-visible': {
+            outline: '3px solid rgba(2, 76, 217, 0.22)',
+            outlineOffset: '3px',
+          }
+        },
       },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#0064d7',
+          textDecoration: 'underline',
+          '&:hover': { textDecoration: 'none' }
+        }
+      }
     },
     MuiCard: {
       styleOverrides: {
@@ -143,4 +162,6 @@ const theme = createTheme({
   },
 });
 
+// Make typography responsive across breakpoints
+theme = responsiveFontSizes(theme, { factor: 2 });
 export default theme;

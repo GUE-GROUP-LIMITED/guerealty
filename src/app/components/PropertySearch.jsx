@@ -122,7 +122,7 @@ export default function PropertySearch({ onSearch = () => {} }) {
         gutterBottom
         sx={{ mb: 2 }}
       >
-        🔍 Find Your Perfect Property
+        🔍 Property Search (Coming Soon)
       </Typography>
       <Typography 
         variant="h6" 
@@ -130,62 +130,17 @@ export default function PropertySearch({ onSearch = () => {} }) {
         color="text.secondary" 
         sx={{ mb: 4, maxWidth: '600px', mx: 'auto' }}
       >
-        Search through our extensive property database with advanced filters
+        Property search will be available when GUE REALTY LIMITED begins trading. This functionality
+        is currently disabled.
       </Typography>
 
-      <Paper elevation={6} sx={{ p: 4, borderRadius: 3, maxWidth: 'lg', mx: 'auto' }}>
+  <Paper elevation={6} sx={{ p: 4, borderRadius: 3, maxWidth: 'lg', mx: 'auto' }}>
         {/* Quick Search Bar */}
-        <Grid container spacing={3} sx={{ mb: 4 }}>
-          <Grid item xs={12} md={4}>
-            <FormControl fullWidth>
-              <InputLabel>Location</InputLabel>
-              <Select
-                value={searchParams.location}
-                onChange={(e) => setSearchParams(prev => ({ ...prev, location: e.target.value }))}
-                startAdornment={<LocationOnIcon sx={{ mr: 1, color: 'text.secondary' }} />}
-              >
-                <MenuItem value="">All Locations</MenuItem>
-                {locations.map((location) => (
-                  <MenuItem key={location} value={location}>{location}</MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Grid>
-
-          <Grid item xs={12} md={4}>
-            <FormControl fullWidth>
-              <InputLabel>Property Type</InputLabel>
-              <Select
-                value={searchParams.propertyType}
-                onChange={(e) => setSearchParams(prev => ({ ...prev, propertyType: e.target.value }))}
-                startAdornment={<HomeIcon sx={{ mr: 1, color: 'text.secondary' }} />}
-              >
-                <MenuItem value="">All Types</MenuItem>
-                {propertyTypes.map((type) => (
-                  <MenuItem key={type} value={type}>{type}</MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Grid>
-
-          <Grid item xs={12} md={4}>
-            <Button
-              variant="contained"
-              size="large"
-              fullWidth
-              onClick={handleSearch}
-              startIcon={<SearchIcon />}
-              sx={{
-                height: '56px',
-                fontSize: '1.1rem',
-                fontWeight: 600,
-                borderRadius: 2,
-              }}
-            >
-              Search Properties
-            </Button>
-          </Grid>
-        </Grid>
+          <Box textAlign="center" sx={{ py: 6 }}>
+            <Typography variant="body1" color="text.secondary">
+              Search controls are temporarily hidden until property listings are published.
+            </Typography>
+          </Box>
 
         {/* Advanced Filters */}
         <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>

@@ -22,36 +22,18 @@ export default function StatsCounter() {
     return () => unsubscribe();
   }, []);
 
-  // Don't render dynamic content until client-side hydration is complete
-  if (!isClient) {
-    return (
-      <Box py={4} display="flex" justifyContent="center">
-        <Paper elevation={3} sx={{ p: 4, minWidth: 200, textAlign: 'center' }}>
-          <Typography variant="h6" color="primary" gutterBottom>
-            Our Network
-          </Typography>
-          <Typography variant="h3" fontWeight="bold">
-            0+
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Trusted Partners
-          </Typography>
-        </Paper>
-      </Box>
-    );
-  }
-
+  // Statistics and live counts are not available while the company is not trading.
   return (
     <Box py={4} display="flex" justifyContent="center">
-      <Paper elevation={3} sx={{ p: 4, minWidth: 200, textAlign: 'center' }}>
+      <Paper elevation={3} sx={{ p: 4, minWidth: 240, textAlign: 'center' }}>
         <Typography variant="h6" color="primary" gutterBottom>
-          Our Network
+          Company Status
         </Typography>
-        <Typography variant="h3" fontWeight="bold">
-          {affiliateCount}+
+        <Typography variant="body1" fontWeight="bold">
+          Newly registered — exploring partnerships and investment opportunities
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Trusted Partners
+        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+          Metrics and live statistics will be published when operations begin.
         </Typography>
       </Paper>
     </Box>

@@ -56,11 +56,11 @@ export default function DiasporaAssurance() {
             sx={{
               color: 'white',
               mb: 2,
-              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              fontSize: { xs: '2rem', md: '2.5rem' },
               textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
             }}
           >
-            🌍 Global ESG Infrastructure Investment
+            Diaspora & Investor Information
           </Typography>
           <Typography
             variant="h5"
@@ -72,7 +72,8 @@ export default function DiasporaAssurance() {
               textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
             }}
           >
-            Comprehensive ESG-compliant infrastructure finance and development solutions for international investors seeking sustainable returns
+            Note: GUE REALTY LIMITED is currently exploring partnerships and investment opportunities. Information about diaspora investment services and
+            investor protections will be published when the company commences operations.
           </Typography>
         </Box>
 
@@ -166,110 +167,29 @@ export default function DiasporaAssurance() {
         </Grid>
 
         {/* Enhanced CTA Section */}
-        <Box
-          textAlign="center"
-          sx={{
-            backgroundColor: 'rgba(255,255,255,0.1)',
-            backdropFilter: 'blur(20px)',
-            borderRadius: 4,
-            p: 6,
-            border: '1px solid rgba(255,255,255,0.2)',
-          }}
-        >
-          <Typography
-            variant="h3"
-            fontWeight="bold"
-            sx={{
-              mb: 2,
-              color: 'white',
-              textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
-            }}
-          >
-            Ready to Invest from Abroad? 🚀
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              color: 'rgba(255,255,255,0.9)',
-              mb: 5,
-              maxWidth: '600px',
-              mx: 'auto',
-              lineHeight: 1.7,
-            }}
-          >
-            Join global investors who trust GUE REALTY LIMITED with their ESG-compliant infrastructure and development finance needs.
-            Start your sustainable investment journey today with a comprehensive consultation.
-          </Typography>
-
           <Box
-            display="flex"
-            flexDirection={{ xs: 'column', sm: 'row' }}
-            gap={3}
-            justifyContent="center"
+            textAlign="center"
+            sx={{
+              backgroundColor: 'rgba(255,255,255,0.06)',
+              backdropFilter: 'blur(10px)',
+              borderRadius: 4,
+              p: 6,
+              border: '1px solid rgba(255,255,255,0.08)',
+            }}
           >
-            <Box
-              component="a"
-              href="#contact"
+            <Typography
+              variant="h6"
               sx={{
-                display: 'inline-block',
-                backgroundColor: 'white !important',
-                color: '#0064d7 !important',
-                px: 6,
-                py: 3,
-                borderRadius: '50px',
-                textDecoration: 'none',
-                fontWeight: 700,
-                fontSize: '1.2rem',
-                minWidth: '200px',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-                transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                background: 'white !important',
-                backgroundImage: 'none !important',
-                textShadow: 'none',
-                '&:hover': {
-                  backgroundColor: '#f0f8ff !important',
-                  color: '#0052cc !important',
-                  transform: 'translateY(-3px) scale(1.05)',
-                  boxShadow: '0 12px 32px rgba(0,0,0,0.2)',
-                  backgroundImage: 'none !important',
-                }
+                color: 'white',
+                mb: 2,
               }}
             >
-              📞 Schedule Free Consultation
-            </Box>
-            <Box
-              component="a"
-              href="#properties"
-              sx={{
-                display: 'inline-block',
-                backgroundColor: 'transparent !important',
-                color: 'white !important',
-                border: '2px solid white',
-                px: 6,
-                py: 3,
-                borderRadius: '50px',
-                textDecoration: 'none',
-                fontWeight: 700,
-                fontSize: '1.2rem',
-                minWidth: '200px',
-                transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                background: 'transparent !important',
-                backgroundImage: 'none !important',
-                textShadow: '0 0 8px rgba(0,0,0,0.8)',
-                '&:hover': {
-                  backgroundColor: 'white !important',
-                  color: '#0064d7 !important',
-                  transform: 'translateY(-3px) scale(1.05)',
-                  boxShadow: '0 12px 32px rgba(255,255,255,0.3)',
-                  backgroundImage: 'none !important',
-                  textShadow: 'none',
-                }
-              }}
-            >
-              🏘️ Browse Properties
-            </Box>
+              Investor information will be provided once the company is operational.
+            </Typography>
+            <Typography variant="body2" color="rgba(255,255,255,0.9)">
+              For enquiries about the parent company, visit www.gueplc.com.
+            </Typography>
           </Box>
-        </Box>
       </Container>
     </Box>
   );

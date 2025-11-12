@@ -29,99 +29,34 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
 export default function CompanyCredentials() {
+  // Display official company registration details (factual) but avoid implying
+  // operational status. Additional certifications/partnerships/awards will be
+  // published when verified and available.
   const registrations = [
     {
-      title: "Corporate Affairs Commission (CAC)",
-      number: "RC 8371222",
-      status: "Active",
-      icon: <BusinessIcon />,
-      description: "Officially registered with the Nigerian Corporate Affairs Commission"
+      title: 'Corporate Registration',
+      number: 'RC - 8371222',
+      status: 'Registered',
+      icon: <BusinessIcon sx={{ color: 'white' }} />,
+      description: (
+        <>
+          <div><strong>Date of Registration:</strong> Mar 26, 2025</div>
+          <div><strong>Nature of Business:</strong> Real Estate Activities</div>
+          <div style={{ marginTop: 8 }}>GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. Official
+            memberships, insurance and partnerships will be published once available and verified.
+          </div>
+        </>
+      ),
     },
-    {
-      title: "Real Estate Developers Association of Nigeria",
-      number: "REDAN/FCT/2018/456",
-      status: "Active Member",
-      icon: <CertificateIcon />,
-      description: "Professional member of Nigeria's premier real estate association"
-    },
-    {
-      title: "Estate Surveyors and Valuers Registration Board",
-      number: "ESVARBON/REG/2019/789",
-      status: "Licensed",
-      icon: <AssignmentIcon />,
-      description: "Licensed to practice real estate valuation and consultancy"
-    },
-    {
-      title: "Federal Inland Revenue Service",
-      number: "TIN: 67891234-0001",
-      status: "Compliant",
-      icon: <AccountBalanceIcon />,
-      description: "Tax identification number and full compliance with tax obligations"
-    }
   ];
 
-  const certifications = [
-    "ISO 9001:2015 Quality Management System",
-    "Certified Real Estate Professional (CREP)",
-    "Project Management Professional (PMP)",
-    "Nigerian Green Building Council Member",
-    "International Real Estate Federation (FIABCI) Associate",
-    "Chartered Institute of Building (CIOB) Affiliate"
-  ];
+  const certifications = [];
 
-  const partnerships = [
-    {
-      name: "First Bank of Nigeria",
-      type: "Mortgage Partner",
-      logo: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=100&h=100&fit=crop"
-    },
-    {
-      name: "GTBank",
-      type: "Financial Partner",
-      logo: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=100&h=100&fit=crop"
-    },
-    {
-      name: "Zenith Bank",
-      type: "Investment Partner",
-      logo: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=100&h=100&fit=crop"
-    },
-    {
-      name: "Julius Berger Nigeria",
-      type: "Construction Partner",
-      logo: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=100&h=100&fit=crop"
-    }
-  ];
+  const partnerships = [];
 
-  const awards = [
-    {
-      year: "2024",
-      title: "Best Real Estate Company - Nigeria Property Awards",
-      category: "Excellence Award"
-    },
-    {
-      year: "2023",
-      title: "Most Trusted Real Estate Brand - Customer Choice Awards",
-      category: "Trust Award"
-    },
-    {
-      year: "2023",
-      title: "Diaspora Real Estate Company of the Year",
-      category: "Innovation Award"
-    },
-    {
-      year: "2022",
-      title: "Outstanding Property Development - Lagos State",
-      category: "Development Award"
-    }
-  ];
+  const awards = [];
 
-  const insurances = [
-    "Professional Indemnity Insurance - ₦1B Coverage",
-    "Public Liability Insurance - ₦500M Coverage",
-    "Directors & Officers Insurance",
-    "Property Development Insurance",
-    "Cyber Liability Insurance"
-  ];
+  const insurances = [];
 
   return (
     <Box
@@ -160,7 +95,8 @@ export default function CompanyCredentials() {
               fontSize: { xs: '1.2rem', md: '1.5rem' }
             }}
           >
-            Your peace of mind is our priority. See why thousands of clients trust GUE REALTY LIMITED with their investments.
+            GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. Official registrations, memberships,
+            insurance and partnerships will be published once available.
           </Typography>
         </Box>
 
@@ -215,7 +151,7 @@ export default function CompanyCredentials() {
                           icon={<VerifiedIcon />}
                           sx={{ mb: 2 }}
                         />
-                        <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.5 }}>
+                        <Typography component="div" variant="body2" color="text.secondary" sx={{ lineHeight: 1.5 }}>
                           {reg.description}
                         </Typography>
                       </Box>
@@ -354,13 +290,14 @@ export default function CompanyCredentials() {
               borderColor: 'success.main'
             }}
           >
-            <VerifiedIcon sx={{ fontSize: 60, color: 'success.main', mb: 2 }} />
-            <Typography variant="h4" fontWeight="bold" gutterBottom color="success.main">
-              100% Verified & Trusted
+            <VerifiedIcon sx={{ fontSize: 60, color: 'primary.main', mb: 2 }} />
+            <Typography variant="h4" fontWeight="bold" gutterBottom color="primary.main">
+              Registered Company (Credentials Pending)
             </Typography>
             <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '800px', mx: 'auto' }}>
-              Every certification, registration, and partnership displayed here is verified and current.
-              Your investment is protected by our comprehensive insurance coverage and regulatory compliance.
+              GUE REALTY LIMITED is registered (RC: 8371222). Additional certifications, partnerships and
+              insurance details will be published here once they have been verified and are available for
+              public disclosure.
             </Typography>
           </Paper>
         </Box>

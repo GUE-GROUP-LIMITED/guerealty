@@ -68,105 +68,27 @@ export default function Services() {
                         gutterBottom
                         sx={{ color: 'primary.main' }}
                     >
-                        Our Services
+                        Services (Coming Soon)
                     </Typography>
                     <Typography
                         variant="h5"
                         color="text.secondary"
                         sx={{ maxWidth: 'md', mx: 'auto', lineHeight: 1.6 }}
                     >
-                        Comprehensive ESG-compliant financial solutions for infrastructure development
-                        and sustainable growth across Africa
+                        GUE REALTY LIMITED is currently exploring partnerships and investment opportunities. Detailed services and offerings will be
+                        published once the company commences operations.
                     </Typography>
                 </Box>
 
                 {/* Services Grid */}
                 <Grid container spacing={4}>
-                    {services.map((service) => (
-                        <Grid item xs={12} md={6} lg={4} key={service.id}>
-                            <Paper
-                                elevation={3}
-                                sx={{
-                                    p: 4,
-                                    height: '100%',
-                                    borderRadius: 3,
-                                    transition: 'all 0.3s ease-in-out',
-                                    '&:hover': {
-                                        transform: 'translateY(-8px)',
-                                        boxShadow: '0 12px 40px rgba(0,0,0,0.15)',
-                                    },
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                }}
-                            >
-                                {/* Service Icon */}
-                                <Box
-                                    sx={{
-                                        backgroundColor: 'primary.main',
-                                        color: 'white',
-                                        borderRadius: '50%',
-                                        width: 80,
-                                        height: 80,
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        mb: 3,
-                                        mx: 'auto',
-                                    }}
-                                >
-                                    {service.icon}
-                                </Box>
-
-                                {/* Service Title */}
-                                <Typography
-                                    variant="h5"
-                                    fontWeight="bold"
-                                    gutterBottom
-                                    textAlign="center"
-                                    sx={{ color: 'primary.main', mb: 2 }}
-                                >
-                                    {service.title}
-                                </Typography>
-
-                                {/* Service Description */}
-                                <Typography
-                                    variant="body1"
-                                    color="text.secondary"
-                                    sx={{ mb: 3, lineHeight: 1.6, textAlign: 'center', flex: 1 }}
-                                >
-                                    {service.description}
-                                </Typography>
-
-                                {/* Service Features */}
-                                <Box>
-                                    <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: 'text.primary', mb: 2 }}>
-                                        Key Features:
-                                    </Typography>
-                                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                                        {service.features.map((feature, index) => (
-                                            <Typography
-                                                key={index}
-                                                variant="body2"
-                                                sx={{
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    color: 'text.secondary',
-                                                    '&:before': {
-                                                        content: '"✓"',
-                                                        color: 'success.main',
-                                                        fontWeight: 'bold',
-                                                        mr: 1,
-                                                    }
-                                                }}
-                                            >
-                                                {feature}
-                                            </Typography>
-                                        ))}
-                                    </Box>
-                                </Box>
-                            </Paper>
-                        </Grid>
-                    ))}
+                    <Grid item xs={12}>
+                        <Typography variant="body1" color="text.secondary" textAlign="center">
+                            Detailed service descriptions will be available once GUE REALTY LIMITED begins
+                            operations. For corporate information, please refer to the parent company at
+                            www.gueplc.com.
+                        </Typography>
+                    </Grid>
                 </Grid>
 
                 {/* Call to Action */}

@@ -26,77 +26,10 @@ export default function PropertyGrid({ properties = [], limit = null }) {
     }
   }, [limit]);
 
-  // Sample featured properties with placeholder data
-  const featuredProperties = [
-    {
-      id: 1,
-      title: "Luxury Villa in Lekki",
-      type: "residential",
-      status: "available",
-      price: 85000000,
-      location: "Lekki Phase 1, Lagos",
-      images: ["https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400"],
-      features: ["5 Bedrooms", "Swimming Pool", "24/7 Security"],
-      slug: "luxury-villa-lekki"
-    },
-    {
-      id: 2,
-      title: "Modern Apartment in VI",
-      type: "residential",
-      status: "available",
-      price: 45000000,
-      location: "Victoria Island, Lagos",
-      images: ["https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400"],
-      features: ["3 Bedrooms", "Ocean View", "Gym Access"],
-      slug: "modern-apartment-vi"
-    },
-    {
-      id: 3,
-      title: "Commercial Plaza",
-      type: "commercial",
-      status: "available",
-      price: 120000000,
-      location: "Ikeja, Lagos",
-      images: ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400"],
-      features: ["Office Spaces", "Parking Lot", "Prime Location"],
-      slug: "commercial-plaza-ikeja"
-    },
-    {
-      id: 4,
-      title: "Land for Sale",
-      type: "land",
-      status: "available",
-      price: 25000000,
-      location: "Abuja, FCT",
-      images: ["https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400"],
-      features: ["2000sqm", "C of O", "Developed Area"],
-      slug: "land-abuja-fct"
-    },
-    {
-      id: 5,
-      title: "Penthouse Suite",
-      type: "residential",
-      status: "ongoing",
-      price: 150000000,
-      location: "Banana Island, Lagos",
-      images: ["https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400"],
-      features: ["Penthouse", "Private Elevator", "Luxury Finishes"],
-      slug: "penthouse-banana-island"
-    },
-    {
-      id: 6,
-      title: "Shopping Complex",
-      type: "commercial",
-      status: "ongoing",
-      price: 300000000,
-      location: "Port Harcourt, Rivers",
-      images: ["https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400"],
-      features: ["Mall Space", "Food Court", "Multi-level"],
-      slug: "shopping-complex-ph"
-    },
-  ];
-
-  const displayProperties = properties.length > 0 ? properties : featuredProperties;
+  // Do NOT expose or render dummy/sample property data on the public site.
+  // If real `properties` are passed in, render them. Otherwise render neutral placeholders
+  // that make no operational claims (company is currently exploring partnerships and investment opportunities).
+  const displayProperties = properties.length > 0 ? properties : [];
 
   // Filter properties based on active filter
   const filteredProperties = activeFilter === 'all'
@@ -129,42 +62,22 @@ export default function PropertyGrid({ properties = [], limit = null }) {
       {/* Section Header */}
       <Box textAlign="center" mb={6}>
         <Typography variant="h3" fontWeight="bold" color="text.primary" mb={2}>
-          Featured Properties
+          Properties (Coming Soon)
         </Typography>
         <Typography variant="h6" color="text.secondary" maxWidth="md" mx="auto">
-          Discover our carefully curated selection of premium properties across Nigeria
+          GUE REALTY LIMITED is currently exploring partnerships and investment opportunities. Property listings will be published as opportunities are formalized.
+          begins operations.
         </Typography>
       </Box>
 
-      {/* Filter Controls */}
-      <Box display="flex" flexWrap="wrap" justifyContent="center" gap={1} mb={4}>
-        {propertyTypes.map((type) => (
-          <Chip
-            key={type.id}
-            label={type.label}
-            onClick={() => {
-              setActiveFilter(type.id);
-              setVisibleCount(limit || 6);
-            }}
-            variant={activeFilter === type.id ? 'filled' : 'outlined'}
-            color={activeFilter === type.id ? 'primary' : 'default'}
-            sx={{ 
-              px: 2, 
-              py: 0.5,
-              cursor: 'pointer',
-              '&:hover': {
-                backgroundColor: activeFilter === type.id ? 'primary.dark' : 'action.hover'
-              }
-            }}
-          />
-        ))}
-      </Box>
+      {/* Filters hidden until listings are available */}
 
       {/* Property Grid */}
       <Grid container spacing={4}>
-        {displayedProperties.map((property) => (
-          <Grid item xs={12} sm={6} lg={4} key={property.id}>
-            <Card 
+            {displayedProperties.length > 0 ? (
+              displayedProperties.map((property) => (
+                <Grid item xs={12} sm={6} lg={4} key={property.id}>
+                  <Card 
               sx={{ 
                 height: '100%',
                 display: 'flex',
@@ -179,8 +92,9 @@ export default function PropertyGrid({ properties = [], limit = null }) {
               <CardMedia
                 component="img"
                 height="220"
-                image={property.images[0]}
-                alt={property.title}
+                      // keep image but guard against missing images
+                      image={property.images && property.images[0] ? property.images[0] : undefined}
+                      alt={property.title || 'Property image'}
                 sx={{ objectFit: 'cover' }}
               />
               <CardContent sx={{ flexGrow: 1, p: 3 }}>
@@ -241,8 +155,7 @@ export default function PropertyGrid({ properties = [], limit = null }) {
                   color="primary"
                   fullWidth
                   size="large"
-                  component={Link}
-                  href={`/properties/${property.slug}`}
+                  disabled
                   sx={{
                     py: 1.5,
                     fontWeight: 600,
@@ -250,12 +163,43 @@ export default function PropertyGrid({ properties = [], limit = null }) {
                     borderRadius: 2,
                   }}
                 >
-                  View Details
+                  Coming Soon
                 </Button>
               </CardContent>
             </Card>
           </Grid>
-        ))}
+          ))
+        ) : (
+          // Render neutral placeholders when there are no real properties
+          [1, 2, 3].map((p) => (
+            <Grid item xs={12} sm={6} lg={4} key={`placeholder-${p}`}>
+              <Card
+                sx={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  opacity: 0.95,
+                }}
+              >
+                <Box sx={{ height: 220, background: 'linear-gradient(135deg,#f5f7fa,#e8eefc)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Typography variant="h6" color="text.secondary">Image placeholder</Typography>
+                </Box>
+                <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                  <Chip label="COMING SOON" size="small" color="warning" />
+                  <Typography variant="h6" fontWeight="bold" mb={1} mt={2}>
+                    Properties will be published soon
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" mb={3}>
+                    GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. Listings will be published as opportunities are formalized.
+                  </Typography>
+                  <Button variant="contained" color="primary" fullWidth size="large" disabled sx={{ py: 1.5, fontWeight: 600, textTransform: 'none', borderRadius: 2 }}>
+                    Coming Soon
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))
+        )}
       </Grid>
 
       {/* Load More Button */}

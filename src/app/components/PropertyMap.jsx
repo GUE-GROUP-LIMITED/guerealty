@@ -2,6 +2,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import L from 'leaflet';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -18,39 +19,17 @@ const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLaye
 const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
 const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
 
-// Sample properties for demonstration (you can replace with real data)
-const sampleProperties = [
-  {
-    _id: '1',
-    title: 'Luxury Villa - Gwarimpa',
-    price: 45000000,
-    location: { coordinates: { lat: 9.0884, lng: 7.4165 } },
-    type: 'Villa'
-  },
-  {
-    _id: '2',
-    title: 'Modern Apartment - Wuse 2',
-    price: 25000000,
-    location: { coordinates: { lat: 9.0579, lng: 7.4951 } },
-    type: 'Apartment'
-  },
-  {
-    _id: '3',
-    title: 'Commercial Plaza - Central Area',
-    price: 120000000,
-    location: { coordinates: { lat: 9.0765, lng: 7.3986 } },
-    type: 'Commercial'
-  },
-  {
-    _id: '4',
-    title: 'Family Home - Maitama',
-    price: 65000000,
-    location: { coordinates: { lat: 9.0904, lng: 7.4607 } },
-    type: 'House'
-  },
-];
-
-export default function PropertyMap({ properties = sampleProperties }) {
+// Do not expose demo/sample properties publicly. Default to an empty list so the UI
+// shows neutral copy until the company is ready to publish real listings.
+export default function PropertyMap({ properties = [] }) {
+  // Create a small div icon to avoid loading Leaflet's default image assets (marker-icon.png)
+  // which aren't present in this project and cause 404s. Using a divIcon prevents image fetches.
+  const defaultDivIcon = L.divIcon({
+    className: 'custom-marker',
+    html: '<span class="marker-dot" aria-hidden="true"></span>',
+    iconSize: [24, 24],
+    iconAnchor: [12, 24]
+  });
   return (
     <Box 
       sx={{ 
@@ -87,7 +66,7 @@ export default function PropertyMap({ properties = sampleProperties }) {
               fontSize: { xs: '2.5rem', md: '3.5rem' }
             }}
           >
-            🗺️ Explore Our Properties
+            🗺️ Explore Our Properties (Coming Soon)
           </Typography>
           <Typography 
             variant="h5" 
@@ -99,7 +78,7 @@ export default function PropertyMap({ properties = sampleProperties }) {
               fontSize: { xs: '1.2rem', md: '1.5rem' }
             }}
           >
-            Discover prime locations across Abuja with our interactive property map. Each marker represents a carefully selected investment opportunity.
+            GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. Interactive property listings and map markers will be published as opportunities are formalized.
           </Typography>
         </Box>
 
@@ -136,10 +115,11 @@ export default function PropertyMap({ properties = sampleProperties }) {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               />
-              {properties.map(property => (
+              {properties.length > 0 && properties.map(property => (
                 <Marker 
                   key={property._id} 
                   position={[property.location.coordinates.lat, property.location.coordinates.lng]}
+                  icon={defaultDivIcon}
                 >
                   <Popup>
                     <Box sx={{ p: 1, minWidth: 200 }}>
@@ -150,16 +130,17 @@ export default function PropertyMap({ properties = sampleProperties }) {
                         <strong>Type:</strong> {property.type}
                       </Typography>
                       <Typography variant="h6" color="success.main" fontWeight="bold" gutterBottom>
-                        ₦{property.price.toLocaleString()}
+                        ₦{property.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                       </Typography>
                       <Button 
                         variant="contained" 
                         size="small" 
                         fullWidth
                         startIcon={<HomeIcon />}
+                        disabled
                         sx={{ mt: 1 }}
                       >
-                        View Details
+                        Coming Soon
                       </Button>
                     </Box>
                   </Popup>
@@ -234,7 +215,7 @@ export default function PropertyMap({ properties = sampleProperties }) {
         {/* Additional Info */}
         <Box textAlign="center" mt={6}>
           <Typography variant="body1" color="text.secondary" sx={{ maxWidth: '600px', mx: 'auto' }}>
-            💡 <strong>Interactive Map:</strong> Click on any marker to view property details. All locations are verified and ready for inspection. Contact our team to schedule a site visit.
+            💡 <strong>Interactive Map:</strong> Click on any marker to view property details when listings are published. Location details will be verified before public listing. Contact our team to register interest.
           </Typography>
         </Box>
       </Container>

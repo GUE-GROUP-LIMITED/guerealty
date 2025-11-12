@@ -66,37 +66,28 @@ export default function Hero() {
             fontWeight="bold"
             sx={{
               mb: 4,
-              fontSize: { xs: '2.5rem', md: '4rem' },
+              fontSize: { xs: '2rem', md: '3rem' },
               lineHeight: 1.1,
-              textShadow: '3px 3px 6px rgba(0,0,0,0.8)',
-              background: 'linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
             }}
           >
-            Sustainable Infrastructure <br /> & Development Finance
+            GUE REALTY LIMITED
           </Typography>
 
           <Typography
             variant="h5"
             sx={{
-              mb: 6,
+              mb: 4,
               opacity: 0.95,
               maxWidth: '700px',
               mx: 'auto',
               fontWeight: 400,
               lineHeight: 1.6,
-              textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
-              backgroundColor: 'rgba(0,0,0,0.2)',
-              padding: '16px 24px',
-              borderRadius: '12px',
-              backdropFilter: 'blur(10px)',
             }}
           >
-            Driving sustainable development through innovative infrastructure finance, real estate development,
-            and asset management solutions that create lasting value for communities and investors across Africa.
+            Notice: GUE REALTY LIMITED is a newly registered subsidiary of the GUE Group and is currently exploring partnerships and investment opportunities.
+            This website is informational only. Services, properties and investment offerings will be published when
+            the company starts operations. For information about the parent group, visit www.gueplc.com.
           </Typography>
 
           {/* Services Highlight */}
@@ -147,7 +138,6 @@ export default function Hero() {
             <Button
               variant="contained"
               size="large"
-              href="#properties"
               sx={{
                 backgroundColor: 'white !important',
                 color: '#0064d7 !important',
@@ -191,12 +181,11 @@ export default function Hero() {
                 }
               }}
             >
-              Browse Properties
+                Coming Soon
             </Button>
             <Button
               variant="outlined"
               size="large"
-              href="#contact"
               sx={{
                 borderColor: 'white !important',
                 borderWidth: '2px !important',
@@ -244,90 +233,29 @@ export default function Hero() {
                 }
               }}
             >
-              Get Consultation
+              Learn More
             </Button>
           </Stack>
 
-          {/* Stats */}
+          {/* Company status notice (replaces operational stats while company is not trading) */}
           <Box
             sx={{
-              backgroundColor: 'rgba(255,255,255,0.1)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: '20px',
-              p: 4,
+              backgroundColor: 'rgba(255,255,255,0.08)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              borderRadius: '16px',
+              p: 3,
               maxWidth: '800px',
               mx: 'auto',
             }}
           >
-            <Stack
-              direction={{ xs: 'column', md: 'row' }}
-              spacing={4}
-              justifyContent="center"
-              divider={
-                <Box sx={{
-                  width: { xs: '100px', md: '2px' },
-                  height: { xs: '2px', md: '80px' },
-                  backgroundColor: 'rgba(255,255,255,0.3)',
-                  mx: 'auto'
-                }} />
-              }
-            >
-              <Box textAlign="center">
-                <Typography
-                  variant="h3"
-                  fontWeight="bold"
-                  sx={{
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #ffd700 100%)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                  }}
-                >
-                  500+
-                </Typography>
-                <Typography variant="body1" sx={{ opacity: 0.9, fontWeight: 500, textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
-                  Properties Sold
-                </Typography>
-              </Box>
-              <Box textAlign="center">
-                <Typography
-                  variant="h3"
-                  fontWeight="bold"
-                  sx={{
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #ffd700 100%)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                  }}
-                >
-                  ₦5B+
-                </Typography>
-                <Typography variant="body1" sx={{ opacity: 0.9, fontWeight: 500, textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
-                  Value Transacted
-                </Typography>
-              </Box>
-              <Box textAlign="center">
-                <Typography
-                  variant="h3"
-                  fontWeight="bold"
-                  sx={{
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #ffd700 100%)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                  }}
-                >
-                  1000+
-                </Typography>
-                <Typography variant="body1" sx={{ opacity: 0.9, fontWeight: 500, textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
-                  Happy Clients
-                </Typography>
-              </Box>
-            </Stack>
+            <Typography variant="h6" color="white" textAlign="center" fontWeight="bold">
+              GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities.
+            </Typography>
+            <Typography variant="body2" color="rgba(255,255,255,0.9)" textAlign="center" sx={{ mt: 1 }}>
+              This site is informational only. Services, property listings and company metrics will be
+              published when the company commences operations. For parent company information visit www.gueplc.com.
+            </Typography>
           </Box>
         </Box>
       </Container>

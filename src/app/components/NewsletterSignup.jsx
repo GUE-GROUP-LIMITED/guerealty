@@ -359,30 +359,15 @@ export default function NewsletterSignup() {
           </Grid>
         </Grid>
 
-        {/* Social Proof */}
-        <Paper elevation={6} sx={{ mt: 8, p: 6, borderRadius: 4, textAlign: 'center', backgroundColor: 'primary.main', color: 'white' }}>
-          <Typography variant="h4" fontWeight="bold" gutterBottom>
-            Trusted by Investors Worldwide
-          </Typography>
-          <Grid container spacing={4} sx={{ mt: 2 }}>
-            <Grid item xs={12} sm={3}>
-              <Typography variant="h2" fontWeight="bold">10K+</Typography>
-              <Typography variant="body1">Newsletter Subscribers</Typography>
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <Typography variant="h2" fontWeight="bold">15+</Typography>
-              <Typography variant="body1">Countries Reached</Typography>
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <Typography variant="h2" fontWeight="bold">98%</Typography>
-              <Typography variant="body1">Reader Satisfaction</Typography>
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <Typography variant="h2" fontWeight="bold">500+</Typography>
-              <Typography variant="body1">Investment Opportunities Shared</Typography>
-            </Grid>
-          </Grid>
-        </Paper>
+        {/* Social Proof removed — metrics are withheld until verified */}
+        <Box sx={{ mt: 8 }}>
+          <Paper elevation={1} sx={{ p: 3, borderRadius: 2, textAlign: 'center' }}>
+            <Typography variant="h6" color="text.secondary">
+              Audience and performance metrics are withheld pending verification. We will publish verified
+              figures here once they have been independently confirmed.
+            </Typography>
+          </Paper>
+        </Box>
       </Container>
     </Box>
   );

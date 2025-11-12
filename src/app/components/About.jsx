@@ -80,20 +80,20 @@ export default function About() {
             gutterBottom
             sx={{ color: 'primary.main' }}
           >
-            About Us: It's Actually About You!
+            About GUE REALTY LIMITED
           </Typography>
           <Typography
             variant="h5"
             color="text.secondary"
             sx={{ maxWidth: 'md', mx: 'auto', lineHeight: 1.6 }}
           >
-            Our core of existence is centered on driving sustainable infrastructure development
-            and providing innovative financial solutions that create lasting value for communities
-            while maintaining the highest ESG standards.
+            GUE REALTY LIMITED is a newly registered subsidiary of the GUE Group. The company is currently exploring partnerships and investment opportunities.
+            This site is for information only. Detailed services, projects and credentials will be published once
+            the company begins operations.
           </Typography>
         </Box>
 
-        {/* Your Fantasies Section */}
+        {/* Informational placeholder */}
         <Box mb={10}>
           <Typography
             variant="h4"
@@ -102,53 +102,11 @@ export default function About() {
             gutterBottom
             sx={{ mb: 4 }}
           >
-            Your Infrastructure & Development Needs Could Be...
+            What to expect
           </Typography>
-          <Grid container spacing={4}>
-            {fantasies.map((fantasy, index) => (
-              <Grid item xs={12} md={6} key={index}>
-                <Paper
-                  elevation={3}
-                  sx={{
-                    p: 4,
-                    height: '100%',
-                    borderRadius: 3,
-                    transition: 'transform 0.3s ease-in-out',
-                    '&:hover': {
-                      transform: 'translateY(-8px)',
-                      boxShadow: 6
-                    }
-                  }}
-                >
-                  <Box display="flex" alignItems="flex-start" gap={2}>
-                    <Box
-                      sx={{
-                        backgroundColor: 'primary.main',
-                        color: 'white',
-                        p: 1.5,
-                        borderRadius: '50%',
-                        minWidth: 48,
-                        height: 48,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                      }}
-                    >
-                      {fantasy.icon}
-                    </Box>
-                    <Box flex={1}>
-                      <Typography variant="h6" fontWeight="bold" gutterBottom>
-                        {index + 1}. {fantasy.title}
-                      </Typography>
-                      <Typography variant="body1" color="text.secondary">
-                        {fantasy.description}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
+          <Typography variant="body1" color="text.secondary" textAlign="center">
+            We are preparing our services and company information. Please check back later for full details.
+          </Typography>
         </Box>
 
         {/* Mission & Vision Section */}

@@ -40,7 +40,7 @@ export default function FAQ() {
       faqs: [
         {
           question: "Can I invest in Nigerian real estate while living abroad?",
-          answer: "Absolutely! GUE REALTY LIMITED specializes in diaspora investments. We have facilitated over $100M in investments from clients in USA, UK, Canada, Germany, and 15+ other countries. Our digital platform and virtual services make it seamless to invest from anywhere in the world."
+          answer: "GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. When investment products and diaspora services are available we will publish verified details and guidance. For corporate information in the meantime, please consult our parent company at https://www.gueplc.com."
         },
         {
           question: "How do I verify properties and avoid scams from abroad?",
@@ -75,7 +75,7 @@ export default function FAQ() {
         },
         {
           question: "What happens if there are legal disputes?",
-          answer: "We carry ₦1B professional indemnity insurance and provide legal support. Our legal team has a 100% success rate in dispute resolution. We also offer arbitration services and work with international legal firms for cross-border dispute resolution."
+          answer: "Specific dispute-resolution procedures and professional indemnity arrangements will be published when they have been finalized and verified. We recommend prospective clients obtain independent legal advice and verify any protections before committing to an investment."
         }
       ]
     },
@@ -109,11 +109,11 @@ export default function FAQ() {
       faqs: [
         {
           question: "How do I know GUE REALTY LIMITED is legitimate and trustworthy?",
-          answer: "GUE REALTY LIMITED is fully registered (RC 8371222), licensed by ESVARBON, member of REDAN, and carries comprehensive insurance. We have 15+ years experience, 5000+ satisfied clients, and ₦100B+ in completed transactions. All credentials are verifiable with relevant authorities."
+          answer: "GUE REALTY LIMITED is registered (RC 8371222). Additional licensing, memberships, insurance and track-record information will be published here once verified. For group-level corporate history please visit https://www.gueplc.com."
         },
         {
           question: "What guarantees do you provide for my investment?",
-          answer: "We provide: 1) Title insurance covering full property value, 2) Construction completion guarantees, 3) Rental income guarantees for first 2 years, 4) Buy-back options after 5 years, 5) Professional indemnity insurance coverage, and 6) Escrow protection for all payments."
+          answer: "Any guarantees or protection mechanisms will be published when finalized and verifiable. Until then, no specific guarantees should be assumed — always review contract terms and seek independent legal advice before investing."
         },
         {
           question: "How do I verify the progress of construction projects?",

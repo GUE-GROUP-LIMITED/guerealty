@@ -1,0 +1,36 @@
+/* Accessibility and UX enhancements */
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Keyboard focus outlines for accessibility (visible when using keyboard navigation) */
+:focus { outline: none; }
+
+:focus-visible {
+  outline: 3px solid rgba(0,100,215,0.18);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Links: ensure high contrast and visible hover/focus states */
+a { color: rgb(0,100,215); text-decoration: underline; }
+
+a:hover, a:focus { color: rgb(66,165,245); text-decoration: none; }
+
+/* Leaflet custom marker dot to avoid external image assets */
+.custom-marker .marker-dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: #0064d7;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.custom-marker { transform: translate(-50%, -100%); }

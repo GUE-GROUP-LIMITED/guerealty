@@ -97,10 +97,10 @@ export default function Contact() {
               textFillColor: 'transparent',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              fontSize: { xs: '2.5rem', md: '3.5rem' }
+              fontSize: { xs: '2rem', md: '2.5rem' }
             }}
           >
-            📞 Contact Our Expert Team
+            Contact & Corporate Enquiries
           </Typography>
           <Typography
             variant="h5"
@@ -109,10 +109,11 @@ export default function Contact() {
               maxWidth: '800px',
               mx: 'auto',
               lineHeight: 1.6,
-              fontSize: { xs: '1.2rem', md: '1.5rem' }
+              fontSize: { xs: '1rem', md: '1.25rem' }
             }}
           >
-            Ready to find your dream property or start investing? Get in touch with our expert team today and turn your realty fantasies into reality.
+            GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. For corporate enquiries and
+            information about the parent company please visit www.gueplc.com.
           </Typography>
         </Box>
 
@@ -162,7 +163,7 @@ export default function Contact() {
                   GUE REALTY LIMITED
                 </Typography>
                 <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem' }}>
-                  Your trusted partner in infrastructure finance, real estate development, and ESG-compliant investment solutions across Africa.
+                  Newly registered subsidiary of the GUE Group. Currently exploring partnerships and investment opportunities.
                 </Typography>
               </Box>
 
@@ -191,22 +192,8 @@ export default function Contact() {
                         📍 Registered Address
                       </Typography>
                       <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.6, mb: 1 }}>
-                        Old Chief Magistrate Court, HVCH+482<br />
-                        Wannune 981107, Benue, Nigeria
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          color: 'primary.main',
-                          fontWeight: 700,
-                          backgroundColor: 'rgba(0,100,215,0.1)',
-                          px: 2,
-                          py: 0.5,
-                          borderRadius: 2,
-                          display: 'inline-block'
-                        }}
-                      >
-                        🏢 RC Number: 8371222
+                        Registered entity — official address and registration details will be published
+                        once available.
                       </Typography>
                     </Box>
                   </Box>

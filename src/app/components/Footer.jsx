@@ -80,77 +80,18 @@ export default function Footer() {
 
           {/* Social Media & Contact */}
           <Grid size={{ xs: 12, md: 4 }}>
-            <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
-              Follow Us
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 2, mb: 3 }}>
-              <Link
-                href="https://facebook.com/guerealtyltd"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: 'inherit',
-                  '&:hover': { color: '#1877F2' },
-                  transition: 'color 0.2s ease'
-                }}
-              >
-                <Facebook />
-              </Link>
-              <Link
-                href="https://twitter.com/guerealtyltd"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: 'inherit',
-                  '&:hover': { color: '#1DA1F2' },
-                  transition: 'color 0.2s ease'
-                }}
-              >
-                <Twitter />
-              </Link>
-              <Link
-                href="https://instagram.com/guerealtyltd"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: 'inherit',
-                  '&:hover': { color: '#E4405F' },
-                  transition: 'color 0.2s ease'
-                }}
-              >
-                <Instagram />
-              </Link>
-              <Link
-                href="https://linkedin.com/company/guerealtyltd"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: 'inherit',
-                  '&:hover': { color: '#0A66C2' },
-                  transition: 'color 0.2s ease'
-                }}
-              >
-                <LinkedIn />
-              </Link>
-              <Link
-                href="https://wa.me/1234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: 'inherit',
-                  '&:hover': { color: '#25D366' },
-                  transition: 'color 0.2s ease'
-                }}
-              >
-                <WhatsApp />
-              </Link>
-            </Box>
-            <Typography variant="body2" sx={{ opacity: 0.8, mb: 1 }}>
-              Email: info@guerealtyltd.com
-            </Typography>
-            <Typography variant="body2" sx={{ opacity: 0.8 }}>
-              Phone: +234 704 695 2003
-            </Typography>
+                <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+                  Follow Parent Company
+                </Typography>
+                <Box sx={{ mb: 3 }}>
+                  <Link href="https://www.gueplc.com" target="_blank" rel="noopener noreferrer" sx={{ color: 'inherit', textDecoration: 'underline' }}>
+                    GUE Group (parent company)
+                  </Link>
+                </Box>
+                <Typography variant="body2" sx={{ opacity: 0.8, mb: 1 }}>
+                  This site is for GUE REALTY LIMITED (newly registered, currently exploring partnerships and investment opportunities). For group-level
+                  information, news and verified contacts, visit the parent company site linked above.
+                </Typography>
           </Grid>
         </Grid>
 
