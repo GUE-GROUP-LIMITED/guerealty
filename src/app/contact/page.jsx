@@ -12,8 +12,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Alert from '@mui/material/Alert';
 
 export default function ContactPage() {
-  const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || 'https://formspree.io/f/YOUR_FORM_ID';
-  const endpointConfigured = !formspreeEndpoint.includes('YOUR_FORM_ID');
+  const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || 'https://formspree.io/f/mnjgjgbn';
+  const endpointConfigured = Boolean(formspreeEndpoint);
 
   const [formData, setFormData] = useState({
     fullName: '',
