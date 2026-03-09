@@ -85,9 +85,9 @@ export default function Hero() {
               lineHeight: 1.6,
             }}
           >
-            Notice: GUE REALTY LIMITED is a newly registered subsidiary of the GUE Group and is currently exploring partnerships and investment opportunities.
-            This website is informational only. Services, properties and investment offerings will be published when
-            the company starts operations. For information about the parent group, visit www.gueplc.com.
+            GUE REALTY LIMITED is an active subsidiary of GUE GROUP LIMITED. We currently manage real estate
+            assets including schools and have acquired land for development of residential and commercial properties.
+            For group-level corporate information, visit www.guegroup.com.
           </Typography>
 
           {/* Services Highlight */}
@@ -181,7 +181,7 @@ export default function Hero() {
                 }
               }}
             >
-                Coming Soon
+              View Portfolio
             </Button>
             <Button
               variant="outlined"
@@ -237,7 +237,7 @@ export default function Hero() {
             </Button>
           </Stack>
 
-          {/* Company status notice (replaces operational stats while company is not trading) */}
+          {/* Company status notice */}
           <Box
             sx={{
               backgroundColor: 'rgba(255,255,255,0.08)',
@@ -250,11 +250,11 @@ export default function Hero() {
             }}
           >
             <Typography variant="h6" color="white" textAlign="center" fontWeight="bold">
-              GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities.
+              GUE REALTY LIMITED is fully operational and actively managing property assets.
             </Typography>
             <Typography variant="body2" color="rgba(255,255,255,0.9)" textAlign="center" sx={{ mt: 1 }}>
-              This site is informational only. Services, property listings and company metrics will be
-              published when the company commences operations. For parent company information visit www.gueplc.com.
+              We currently manage schools and acquired land earmarked for property development.
+              For parent company information visit www.guegroup.com.
             </Typography>
           </Box>
         </Box>

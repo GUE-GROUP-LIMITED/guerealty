@@ -66,7 +66,7 @@ export default function PropertyMap({ properties = [] }) {
               fontSize: { xs: '2.5rem', md: '3.5rem' }
             }}
           >
-            🗺️ Explore Our Properties (Coming Soon)
+            🗺️ Explore Our Properties
           </Typography>
           <Typography 
             variant="h5" 
@@ -78,7 +78,8 @@ export default function PropertyMap({ properties = [] }) {
               fontSize: { xs: '1.2rem', md: '1.5rem' }
             }}
           >
-            GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. Interactive property listings and map markers will be published as opportunities are formalized.
+            Explore our managed assets and development locations. New markers and opportunities are added as
+            listings complete internal verification.
           </Typography>
         </Box>
 
@@ -140,7 +141,7 @@ export default function PropertyMap({ properties = [] }) {
                         disabled
                         sx={{ mt: 1 }}
                       >
-                        Coming Soon
+                        View Details
                       </Button>
                     </Box>
                   </Popup>
@@ -215,7 +216,8 @@ export default function PropertyMap({ properties = [] }) {
         {/* Additional Info */}
         <Box textAlign="center" mt={6}>
           <Typography variant="body1" color="text.secondary" sx={{ maxWidth: '600px', mx: 'auto' }}>
-            💡 <strong>Interactive Map:</strong> Click on any marker to view property details when listings are published. Location details will be verified before public listing. Contact our team to register interest.
+            💡 <strong>Interactive Map:</strong> Click markers to view available details and contact our team for
+            full due-diligence packs and site-visit coordination.
           </Typography>
         </Box>
       </Container>

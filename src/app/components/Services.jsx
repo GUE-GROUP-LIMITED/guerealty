@@ -68,15 +68,15 @@ export default function Services() {
                         gutterBottom
                         sx={{ color: 'primary.main' }}
                     >
-                        Services (Coming Soon)
+                        Our Services
                     </Typography>
                     <Typography
                         variant="h5"
                         color="text.secondary"
                         sx={{ maxWidth: 'md', mx: 'auto', lineHeight: 1.6 }}
                     >
-                        GUE REALTY LIMITED is currently exploring partnerships and investment opportunities. Detailed services and offerings will be
-                        published once the company commences operations.
+                        GUE REALTY LIMITED is operational and delivering real estate and development-focused services,
+                        including management of existing assets and land-backed development initiatives.
                     </Typography>
                 </Box>
 
@@ -84,9 +84,8 @@ export default function Services() {
                 <Grid container spacing={4}>
                     <Grid item xs={12}>
                         <Typography variant="body1" color="text.secondary" textAlign="center">
-                            Detailed service descriptions will be available once GUE REALTY LIMITED begins
-                            operations. For corporate information, please refer to the parent company at
-                            www.gueplc.com.
+                            We currently manage schools and other property assets, while advancing new development
+                            projects on acquired land. For group-level corporate information, visit www.guegroup.com.
                         </Typography>
                     </Grid>
                 </Grid>

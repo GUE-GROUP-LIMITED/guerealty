@@ -87,9 +87,9 @@ export default function About() {
             color="text.secondary"
             sx={{ maxWidth: 'md', mx: 'auto', lineHeight: 1.6 }}
           >
-            GUE REALTY LIMITED is a newly registered subsidiary of the GUE Group. The company is currently exploring partnerships and investment opportunities.
-            This site is for information only. Detailed services, projects and credentials will be published once
-            the company begins operations.
+            GUE REALTY LIMITED is an active subsidiary of GUE GROUP LIMITED. We currently manage real estate
+            assets including schools and have acquired land for development projects. This site presents our
+            current focus areas, services, and investment direction.
           </Typography>
         </Box>
 
@@ -105,7 +105,7 @@ export default function About() {
             What to expect
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center">
-            We are preparing our services and company information. Please check back later for full details.
+            We are expanding our portfolio and publishing additional verified project details in phases.
           </Typography>
         </Box>
 

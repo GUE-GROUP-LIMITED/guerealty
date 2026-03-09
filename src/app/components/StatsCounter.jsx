@@ -22,7 +22,7 @@ export default function StatsCounter() {
     return () => unsubscribe();
   }, []);
 
-  // Statistics and live counts are not available while the company is not trading.
+  // Statistics and live counts are updated progressively as figures are verified.
   return (
     <Box py={4} display="flex" justifyContent="center">
       <Paper elevation={3} sx={{ p: 4, minWidth: 240, textAlign: 'center' }}>
@@ -30,10 +30,10 @@ export default function StatsCounter() {
           Company Status
         </Typography>
         <Typography variant="body1" fontWeight="bold">
-          Newly registered — exploring partnerships and investment opportunities
+          Operational — managing active real estate assets and development land
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-          Metrics and live statistics will be published when operations begin.
+          Portfolio metrics are updated as new verified figures become available.
         </Typography>
       </Paper>
     </Box>

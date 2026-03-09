@@ -28,7 +28,7 @@ export default function PropertyGrid({ properties = [], limit = null }) {
 
   // Do NOT expose or render dummy/sample property data on the public site.
   // If real `properties` are passed in, render them. Otherwise render neutral placeholders
-  // that make no operational claims (company is currently exploring partnerships and investment opportunities).
+  // that avoid exposing unverified sample inventory.
   const displayProperties = properties.length > 0 ? properties : [];
 
   // Filter properties based on active filter
@@ -62,11 +62,11 @@ export default function PropertyGrid({ properties = [], limit = null }) {
       {/* Section Header */}
       <Box textAlign="center" mb={6}>
         <Typography variant="h3" fontWeight="bold" color="text.primary" mb={2}>
-          Properties (Coming Soon)
+          Properties
         </Typography>
         <Typography variant="h6" color="text.secondary" maxWidth="md" mx="auto">
-          GUE REALTY LIMITED is currently exploring partnerships and investment opportunities. Property listings will be published as opportunities are formalized.
-          begins operations.
+          GUE REALTY LIMITED manages active real estate assets, including schools, and has acquired land for
+          development. Listings are published as each opportunity is verified for release.
         </Typography>
       </Box>
 
@@ -163,7 +163,7 @@ export default function PropertyGrid({ properties = [], limit = null }) {
                     borderRadius: 2,
                   }}
                 >
-                  Coming Soon
+                  View Details
                 </Button>
               </CardContent>
             </Card>
@@ -185,15 +185,16 @@ export default function PropertyGrid({ properties = [], limit = null }) {
                   <Typography variant="h6" color="text.secondary">Image placeholder</Typography>
                 </Box>
                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                  <Chip label="COMING SOON" size="small" color="warning" />
+                  <Chip label="AVAILABLE ON REQUEST" size="small" color="warning" />
                   <Typography variant="h6" fontWeight="bold" mb={1} mt={2}>
-                    Properties will be published soon
+                    Portfolio details available on request
                   </Typography>
                   <Typography variant="body2" color="text.secondary" mb={3}>
-                    GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. Listings will be published as opportunities are formalized.
+                    We currently manage real estate assets and development land. Contact us for verified
+                    opportunities that match your requirements.
                   </Typography>
                   <Button variant="contained" color="primary" fullWidth size="large" disabled sx={{ py: 1.5, fontWeight: 600, textTransform: 'none', borderRadius: 2 }}>
-                    Coming Soon
+                    Contact for Access
                   </Button>
                 </CardContent>
               </Card>

@@ -112,8 +112,8 @@ export default function Contact() {
               fontSize: { xs: '1rem', md: '1.25rem' }
             }}
           >
-            GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. For corporate enquiries and
-            information about the parent company please visit www.gueplc.com.
+            GUE REALTY LIMITED is an active subsidiary of GUE GROUP LIMITED. We manage real estate assets including
+            schools and have acquired land for development. For group information please visit www.guegroup.com.
           </Typography>
         </Box>
 
@@ -163,7 +163,7 @@ export default function Contact() {
                   GUE REALTY LIMITED
                 </Typography>
                 <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem' }}>
-                  Newly registered subsidiary of the GUE Group. Currently exploring partnerships and investment opportunities.
+                  Active subsidiary of GUE GROUP LIMITED, managing schools and development land assets.
                 </Typography>
               </Box>
 
