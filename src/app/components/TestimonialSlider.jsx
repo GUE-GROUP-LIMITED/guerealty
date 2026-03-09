@@ -21,10 +21,10 @@ export default function TestimonialSlider() {
   const testimonials = [
     {
       id: 0,
-      name: "Coming Soon",
+      name: "Client Updates",
       role: "",
       location: "",
-      content: "Client testimonials will be published once GUE REALTY LIMITED has verified client engagements.",
+      content: "Client testimonials are being curated and published in line with our internal verification process.",
       rating: 0,
       image: '',
       investment: ''

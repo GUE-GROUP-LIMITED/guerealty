@@ -72,8 +72,8 @@ export default function DiasporaAssurance() {
               textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
             }}
           >
-            Note: GUE REALTY LIMITED is currently exploring partnerships and investment opportunities. Information about diaspora investment services and
-            investor protections will be published when the company commences operations.
+            GUE REALTY LIMITED supports diaspora and institutional investors with verified processes across
+            managed assets, including schools, and upcoming development projects on acquired land.
           </Typography>
         </Box>
 
@@ -184,10 +184,10 @@ export default function DiasporaAssurance() {
                 mb: 2,
               }}
             >
-              Investor information will be provided once the company is operational.
+              Contact us for current opportunities and partnership enquiries.
             </Typography>
             <Typography variant="body2" color="rgba(255,255,255,0.9)">
-              For enquiries about the parent company, visit www.gueplc.com.
+              For enquiries about the parent company, visit www.guegroup.com.
             </Typography>
           </Box>
       </Container>

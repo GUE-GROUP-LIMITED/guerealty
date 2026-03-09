@@ -40,7 +40,7 @@ export default function FAQ() {
       faqs: [
         {
           question: "Can I invest in Nigerian real estate while living abroad?",
-          answer: "GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. When investment products and diaspora services are available we will publish verified details and guidance. For corporate information in the meantime, please consult our parent company at https://www.gueplc.com."
+          answer: "Yes. GUE REALTY LIMITED supports diaspora investors with structured onboarding and verified documentation pathways. For group-level corporate information, please consult our parent company at https://www.guegroup.com."
         },
         {
           question: "How do I verify properties and avoid scams from abroad?",
@@ -109,7 +109,7 @@ export default function FAQ() {
       faqs: [
         {
           question: "How do I know GUE REALTY LIMITED is legitimate and trustworthy?",
-          answer: "GUE REALTY LIMITED is registered (RC 8371222). Additional licensing, memberships, insurance and track-record information will be published here once verified. For group-level corporate history please visit https://www.gueplc.com."
+          answer: "GUE REALTY LIMITED is registered (RC 8371222) and is an operating subsidiary of GUE GROUP LIMITED. We currently manage real estate assets including schools and acquired land for development. For group-level corporate history please visit https://www.guegroup.com."
         },
         {
           question: "What guarantees do you provide for my investment?",

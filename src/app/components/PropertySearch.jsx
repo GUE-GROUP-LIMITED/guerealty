@@ -122,7 +122,7 @@ export default function PropertySearch({ onSearch = () => {} }) {
         gutterBottom
         sx={{ mb: 2 }}
       >
-        🔍 Property Search (Coming Soon)
+        🔍 Property Search
       </Typography>
       <Typography 
         variant="h6" 
@@ -130,15 +130,14 @@ export default function PropertySearch({ onSearch = () => {} }) {
         color="text.secondary" 
         sx={{ mb: 4, maxWidth: '600px', mx: 'auto' }}
       >
-        Property search will be available when GUE REALTY LIMITED begins trading. This functionality
-        is currently disabled.
+        Explore available managed assets and development opportunities by location, budget, and features.
       </Typography>
 
   <Paper elevation={6} sx={{ p: 4, borderRadius: 3, maxWidth: 'lg', mx: 'auto' }}>
         {/* Quick Search Bar */}
           <Box textAlign="center" sx={{ py: 6 }}>
             <Typography variant="body1" color="text.secondary">
-              Search controls are temporarily hidden until property listings are published.
+              Search controls are being expanded as additional listings are onboarded.
             </Typography>
           </Box>
 

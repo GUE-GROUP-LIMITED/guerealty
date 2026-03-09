@@ -21,7 +21,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 export default function TeamProfiles() {
-  // No public team profiles while company is not trading. Keep a short placeholder message.
+  // Team profiles are published progressively.
   const teamMembers = [];
 
   const getRandomColor = (index) => {
@@ -84,8 +84,8 @@ export default function TeamProfiles() {
         <Grid container spacing={4}>
           <Grid item xs={12}>
             <Typography variant="body1" color="text.secondary" textAlign="center">
-              Public team profiles will be published when GUE REALTY LIMITED commences trading. For now,
-              corporate information is available via the parent company: www.gueplc.com.
+              Team profiles are being expanded as we scale operations. For group-level corporate information,
+              visit our parent company: www.guegroup.com.
             </Typography>
           </Grid>
         </Grid>

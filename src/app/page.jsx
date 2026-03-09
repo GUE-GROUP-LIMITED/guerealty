@@ -1,149 +1,122 @@
-// src/app/page.jsx
-// Updated for comprehensive website improvements
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import PropertySearch from './components/PropertySearch';
-import InvestmentPlans from './components/InvestmentPlans';
-import MortgageCalculator from './components/MortgageCalculator';
-import StatsCounter from './components/StatsCounter';
-import TeamProfiles from './components/TeamProfiles';
-import CompanyCredentials from './components/CompanyCredentials';
-import TestimonialSlider from './components/TestimonialSlider';
-import DiasporaAssurance from './components/DiasporaAssurance';
-import PropertyGrid from './components/PropertyGrid';
-import PropertyMap from './components/PropertyMap';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import NewsletterSignup from './components/NewsletterSignup';
-import Navigation from './components/Navigation';
-import NoSSR from './components/NoSSR';
-import ClientOnly from './components/ClientOnly';
-import Footer from './components/Footer';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import './globals.css';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
 
 export default function Home() {
   return (
-    <Box>
-      {/* Modern Navigation Bar */}
-      <ClientOnly>
-        <Navigation />
-      </ClientOnly>
+    <main>
+      <Box
+        sx={{
+          py: { xs: 8, md: 12 },
+          position: 'relative',
+          overflow: 'hidden',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,100,215,0.45) 100%), url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1800&q=80") center/cover',
+          },
+        }}
+      >
+        <Container maxWidth="lg">
+          <Stack spacing={4} textAlign="center" alignItems="center" sx={{ position: 'relative', zIndex: 1 }}>
+            <Typography variant="h2" fontWeight="bold" sx={{ maxWidth: 900, color: 'common.white' }}>
+              GUE REALTY LIMITED
+            </Typography>
+            <Typography variant="h5" sx={{ maxWidth: 900, color: 'rgba(255,255,255,0.92)' }}>
+              An active subsidiary of GUE GROUP LIMITED focused on Real Estate Activities,
+              including real estate marketing, investment, development, appraisal, and management.
+            </Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+              <Button variant="contained" href="/properties" size="large">View Properties</Button>
+              <Button
+                variant="outlined"
+                href="/contact"
+                size="large"
+                sx={{ borderColor: 'common.white', color: 'common.white' }}
+              >
+                Speak With Our Team
+              </Button>
+            </Stack>
+          </Stack>
+        </Container>
+      </Box>
 
-      {/* Main Content */}
-      <main>
-        {/* Hero Section */}
-        <section id="home">
-          <Hero />
-        </section>
+      <Container maxWidth="lg" sx={{ py: 8 }}>
+        <Typography variant="h4" fontWeight="bold" textAlign="center" mb={4}>
+          What We Do
+        </Typography>
+        <Grid container spacing={3}>
+          {[
+            {
+              title: 'Real Estate Marketing',
+              body: 'Connecting buyers, sellers, and investors through structured property marketing.'
+            },
+            {
+              title: 'Investment & Development',
+              body: 'Real estate investment and development across managed assets and acquired land.'
+            },
+            {
+              title: 'Appraisal & Management',
+              body: 'Property appraisal and professional management to enhance asset value and performance.'
+            }
+          ].map((item) => (
+            <Grid key={item.title} size={{ xs: 12, md: 4 }}>
+              <Paper elevation={2} sx={{ p: 3, height: '100%' }}>
+                <Typography variant="h6" fontWeight="bold" mb={1}>{item.title}</Typography>
+                <Typography color="text.secondary">{item.body}</Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
-        {/* About Section */}
-        <section id="about">
-          <About />
-        </section>
+      <Container maxWidth="lg" sx={{ pb: 10 }}>
+        <Typography variant="h4" fontWeight="bold" textAlign="center" mb={2}>
+          Portfolio Preview
+        </Typography>
+        <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ maxWidth: 900, mx: 'auto', mb: 4 }}>
+          A snapshot of the real estate categories we focus on across management and development.
+        </Typography>
 
-        {/* Services Section */}
-        <section id="services">
-          <Services />
-        </section>
-
-        {/* Company Credentials Section - Build Trust Early */}
-        <section id="credentials">
-          <CompanyCredentials />
-        </section>
-
-        {/* Property Search Section */}
-        <section id="property-search">
-          <Container maxWidth="xl" sx={{ py: 8 }}>
-            <PropertySearch />
-          </Container>
-        </section>
-
-        {/* Property Grid Section */}
-        <section id="properties">
-          <Container maxWidth="lg" sx={{ py: 8 }}>
-            <PropertyGrid />
-          </Container>
-        </section>
-
-        {/* Mortgage Calculator Section */}
-        <section id="mortgage-calculator">
-          <Box sx={{ backgroundColor: 'grey.50', py: 8 }}>
-            <Container maxWidth="xl">
-              <MortgageCalculator />
-            </Container>
-          </Box>
-        </section>
-
-        {/* Investment Plans Section */}
-        <section id="investment-plans">
-          <Container maxWidth="lg" sx={{ py: 8 }}>
-            <Box textAlign="center" mb={6}>
-              <Box component="h2" sx={{ typography: 'h3', fontWeight: 'bold', mb: 2, color: 'text.primary' }}>
-                Investment Plans
-              </Box>
-              <Box component="p" sx={{ typography: 'h6', color: 'text.secondary', maxWidth: 'md', mx: 'auto' }}>
-                Choose the perfect investment plan that suits your budget and goals
-              </Box>
-            </Box>
-            <InvestmentPlans />
-          </Container>
-        </section>
-
-        {/* Stats Counter Section */}
-        <ClientOnly>
-          <StatsCounter />
-        </ClientOnly>
-
-        {/* Team Profiles Section - Build Trust with Faces */}
-        <section id="team">
-          <TeamProfiles />
-        </section>
-
-        {/* Testimonials Section */}
-        <section id="testimonials">
-          <ClientOnly>
-            <TestimonialSlider />
-          </ClientOnly>
-        </section>
-
-        {/* Diaspora Assurance Section */}
-        <ClientOnly>
-          <DiasporaAssurance />
-        </ClientOnly>
-
-        {/* FAQ Section - Address Common Concerns */}
-        <section id="faq">
-          <FAQ />
-        </section>
-
-        {/* Property Map Section */}
-        <section id="property-map">
-          <ClientOnly>
-            <PropertyMap />
-          </ClientOnly>
-        </section>
-
-        {/* Newsletter Signup Section */}
-        <section id="newsletter">
-          <NewsletterSignup />
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact">
-          <ClientOnly>
-            <Contact />
-          </ClientOnly>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <Footer />
-    </Box>
+        <Grid container spacing={3}>
+          {[
+            {
+              title: 'Education Properties',
+              description: 'Managed school assets and learning-focused facilities.',
+              image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1400&q=80'
+            },
+            {
+              title: 'Residential Development',
+              description: 'Land-backed residential projects in growth corridors.',
+              image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80'
+            },
+            {
+              title: 'Commercial Real Estate',
+              description: 'Commercial property opportunities for investors and operators.',
+              image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80'
+            }
+          ].map((item) => (
+            <Grid key={item.title} size={{ xs: 12, md: 4 }}>
+              <Card elevation={2} sx={{ height: '100%' }}>
+                <CardMedia component="img" height="220" image={item.image} alt={item.title} />
+                <CardContent>
+                  <Typography variant="h6" fontWeight="bold" mb={1}>{item.title}</Typography>
+                  <Typography color="text.secondary">{item.description}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </main>
   );
 }

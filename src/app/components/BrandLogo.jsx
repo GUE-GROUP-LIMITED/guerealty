@@ -1,26 +1,23 @@
 "use client";
+import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Image from 'next/image';
 
 export default function BrandLogo({ variant = 'desktop' }) {
   const isMobile = variant === 'mobile';
 
   return (
     <Box
+      component={Link}
+      href="/"
       display="flex"
       alignItems="center"
       sx={{
         cursor: 'pointer',
+        textDecoration: 'none',
         transition: 'transform 0.2s ease',
         '&:hover': {
           transform: 'scale(1.05)',
-        }
-      }}
-      onClick={() => {
-        const element = document.querySelector('#home');
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }}
     >
@@ -67,7 +64,7 @@ export default function BrandLogo({ variant = 'desktop' }) {
             fontWeight: isMobile ? 500 : 400
           }}
         >
-          Sustainable Infrastructure Finance
+          Real Estate Activities
         </Typography>
       </Box>
     </Box>

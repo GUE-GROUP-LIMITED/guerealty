@@ -42,8 +42,8 @@ export default function CompanyCredentials() {
         <>
           <div><strong>Date of Registration:</strong> Mar 26, 2025</div>
           <div><strong>Nature of Business:</strong> Real Estate Activities</div>
-          <div style={{ marginTop: 8 }}>GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. Official
-            memberships, insurance and partnerships will be published once available and verified.
+          <div style={{ marginTop: 8 }}>GUE REALTY LIMITED is an active subsidiary of GUE GROUP LIMITED, currently managing real estate assets including schools
+            and acquired land for development. Additional memberships, insurance and strategic partnerships are published as verification is completed.
           </div>
         </>
       ),
@@ -95,8 +95,8 @@ export default function CompanyCredentials() {
               fontSize: { xs: '1.2rem', md: '1.5rem' }
             }}
           >
-            GUE REALTY LIMITED is newly registered and is currently exploring partnerships and investment opportunities. Official registrations, memberships,
-            insurance and partnerships will be published once available.
+            GUE REALTY LIMITED is an active subsidiary of GUE GROUP LIMITED. Official registrations, memberships,
+            insurance and partnerships are published as verification and approvals are completed.
           </Typography>
         </Box>
 
@@ -292,12 +292,11 @@ export default function CompanyCredentials() {
           >
             <VerifiedIcon sx={{ fontSize: 60, color: 'primary.main', mb: 2 }} />
             <Typography variant="h4" fontWeight="bold" gutterBottom color="primary.main">
-              Registered Company (Credentials Pending)
+              Registered Company (Operational)
             </Typography>
             <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '800px', mx: 'auto' }}>
-              GUE REALTY LIMITED is registered (RC: 8371222). Additional certifications, partnerships and
-              insurance details will be published here once they have been verified and are available for
-              public disclosure.
+              GUE REALTY LIMITED is registered (RC: 8371222) and operational. Certifications, partnerships and
+              insurance disclosures are updated as they are verified for public publication.
             </Typography>
           </Paper>
         </Box>
