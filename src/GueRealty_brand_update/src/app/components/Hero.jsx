@@ -114,11 +114,7 @@ export default function Hero() {
           </Stack>
 
           {/* CTAs */}
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={2}
-            sx={{ mb: 6 }}
-          >
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mb: 6 }}>
             <Button
               component={Link}
               href="/properties"

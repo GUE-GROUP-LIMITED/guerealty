@@ -11,12 +11,12 @@ module.exports = {
         background: 'rgb(var(--background))',
         foreground: 'rgb(var(--foreground))',
         // GUE Realty brand
-        'brand-navy': '#1A2B5E',
+        'brand-navy':  '#1A2B5E',
         'brand-green': '#1A7A3C',
-        'brand-red': '#CC2020',
-        'brand-gold': '#D4A017',
+        'brand-red':   '#CC2020',
+        'brand-gold':  '#D4A017',
         primary: {
-          50: '#EDF0F7',
+          50:  '#EDF0F7',
           100: '#C7D0E8',
           500: '#1A2B5E',
           600: '#0F1A3A',

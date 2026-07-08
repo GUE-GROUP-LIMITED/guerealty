@@ -3,28 +3,28 @@
 
 :root {
   /* Light theme colors */
-  --background: 250 250 250; /* #fafafa */
-  --foreground: 44 44 44; /* #2c2c2c */
-  --primary: 0 100 215; /* #0064d7 */
+  --background: 245 247 250; /* #F5F7FA */
+  --foreground: 26 43 94; /* #1A2B5E */
+  --primary: 26 43 94; /* #1A2B5E */
   --primary-foreground: 255 255 255; /* white */
-  --secondary: 255 215 0; /* #ffd700 */
-  --border: 224 224 224; /* #e0e0e0 */
+  --secondary: 26 122 60; /* #1A7A3C */
+  --border: 226 232 240; /* #E2E8F0 */
   --card: 255 255 255; /* white */
-  --muted: 245 245 245; /* #f5f5f5 */
-  --accent: 66 165 245; /* #42a5f5 */
+  --muted: 237 240 245; /* #EDF0F5 */
+  --accent: 34 160 80; /* #22A050 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 18 18 18; /* #121212 */
-    --foreground: 250 250 250; /* #fafafa */
-    --primary: 66 165 245; /* #42a5f5 */
-    --primary-foreground: 18 18 18; /* #121212 */
-    --secondary: 255 215 0; /* #ffd700 */
-    --border: 64 64 64; /* #404040 */
-    --card: 36 36 36; /* #242424 */
-    --muted: 24 24 24; /* #181818 */
-    --accent: 0 100 215; /* #0064d7 */
+    --background: 15 26 58; /* #0F1A3A */
+    --foreground: 245 247 250; /* #F5F7FA */
+    --primary: 45 74 140; /* #2D4A8C */
+    --primary-foreground: 245 247 250; /* #F5F7FA */
+    --secondary: 26 122 60; /* #1A7A3C */
+    --border: 74 85 104; /* #4A5568 */
+    --card: 26 43 94; /* #1A2B5E */
+    --muted: 26 43 94; /* #1A2B5E */
+    --accent: 34 160 80; /* #22A050 */
   }
 }
 
@@ -41,7 +41,7 @@ html {
 body {
   background: rgb(var(--background));
   color: rgb(var(--foreground));
-  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;
+  font-family: 'Syne', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -106,7 +106,7 @@ body {
 /* Button hover effects */
 .btn-hover-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 100, 215, 0.3);
+  box-shadow: 0 8px 25px rgba(26, 43, 94, 0.3);
   transition: all 0.3s ease;
 }
 
