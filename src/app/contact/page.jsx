@@ -80,38 +80,54 @@ export default function ContactPage() {
     <main>
       <Box
         sx={{
-          py: { xs: 8, md: 10 },
+          py: { xs: 9, md: 11 },
           position: 'relative',
           overflow: 'hidden',
+          color: 'common.white',
           '&::before': {
             content: '""',
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(135deg, rgba(0,0,0,0.62) 0%, rgba(0,100,215,0.35) 100%), url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80") center/cover',
+              'linear-gradient(150deg, rgba(15,26,58,0.88) 0%, rgba(26,122,60,0.62) 100%), url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80") center/cover',
           },
         }}
       >
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 4,
+            zIndex: 2,
+            background: 'linear-gradient(90deg, #CC2020 0%, #1A7A3C 50%, #1A2B5E 100%)',
+          }}
+        />
         <Container maxWidth="lg">
-          <Typography variant="h3" fontWeight="bold" textAlign="center" mb={2} sx={{ color: 'common.white', position: 'relative', zIndex: 1 }}>
-            Contact Us
-          </Typography>
-          <Typography
-            variant="h6"
-            textAlign="center"
-            sx={{ maxWidth: 900, mx: 'auto', color: 'rgba(255,255,255,0.92)', position: 'relative', zIndex: 1 }}
-          >
-            Submit your enquiry through our secure form for partnerships, portfolio requests,
-            and investment discussions.
-          </Typography>
+          <Box sx={{ position: 'relative', zIndex: 1 }}>
+            <Typography sx={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.1em', mb: 2 }}>
+              CONTACT · GUE REALTY LIMITED
+            </Typography>
+            <Typography variant="h2" fontWeight={800} sx={{ mb: 2, letterSpacing: '-0.025em' }}>
+              Let&apos;s Discuss Your Property Goals
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{ maxWidth: 920, color: 'rgba(255,255,255,0.9)', lineHeight: 1.75, fontWeight: 400 }}
+            >
+              Submit your enquiry through our secure form for partnerships, portfolio requests,
+              and investment discussions.
+            </Typography>
+          </Box>
         </Container>
       </Box>
 
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <Grid container spacing={3}>
           <Grid size={{ xs: 12, md: 6 }}>
-            <Paper elevation={2} sx={{ p: 4, height: '100%' }}>
-              <Typography variant="h5" fontWeight="bold" mb={1}>Send an Enquiry</Typography>
+            <Paper elevation={0} sx={{ p: 4, height: '100%', border: '1px solid #E2E8F0', borderRadius: 3 }}>
+              <Typography variant="h5" fontWeight={800} mb={1} sx={{ color: '#1A2B5E' }}>Send an Enquiry</Typography>
               <Typography color="text.secondary" mb={3}>
                 Complete this form and our team will respond with the appropriate next steps.
               </Typography>
@@ -177,7 +193,7 @@ export default function ContactPage() {
                     sx={{ display: 'none' }}
                   />
 
-                  <Button type="submit" variant="contained" disabled={submitting}>
+                  <Button type="submit" variant="contained" color="secondary" disabled={submitting}>
                     {submitting ? 'Submitting...' : 'Submit Enquiry'}
                   </Button>
                 </Stack>
@@ -186,23 +202,32 @@ export default function ContactPage() {
           </Grid>
 
           <Grid size={{ xs: 12, md: 6 }}>
-            <Paper elevation={2} sx={{ p: 4, height: '100%' }}>
-              <Typography variant="h5" fontWeight="bold" mb={2}>Before You Submit</Typography>
+            <Paper
+              elevation={0}
+              sx={{
+                p: 4,
+                height: '100%',
+                border: '1px solid #E2E8F0',
+                borderRadius: 3,
+                background: 'linear-gradient(165deg, rgba(26,43,94,0.03) 0%, rgba(26,122,60,0.05) 100%)',
+              }}
+            >
+              <Typography variant="h5" fontWeight={800} mb={2} sx={{ color: '#1A2B5E' }}>Before You Submit</Typography>
               <Stack spacing={2}>
                 <Box>
-                  <Typography fontWeight="bold">What should I include in my message?</Typography>
+                  <Typography fontWeight={700} sx={{ color: '#1A2B5E' }}>What should I include in my message?</Typography>
                   <Typography color="text.secondary">Yes. We manage operating assets including schools and maintain acquired development land.</Typography>
                 </Box>
                 <Box>
-                  <Typography fontWeight="bold">How quickly will you respond?</Typography>
+                  <Typography fontWeight={700} sx={{ color: '#1A2B5E' }}>How quickly will you respond?</Typography>
                   <Typography color="text.secondary">Most enquiries are acknowledged within one business day.</Typography>
                 </Box>
                 <Box>
-                  <Typography fontWeight="bold">Do you work with partners and investors?</Typography>
+                  <Typography fontWeight={700} sx={{ color: '#1A2B5E' }}>Do you work with partners and investors?</Typography>
                   <Typography color="text.secondary">Yes. We engage development, operating, and investment partners on structured terms.</Typography>
                 </Box>
                 <Box>
-                  <Typography fontWeight="bold">Company Profile</Typography>
+                  <Typography fontWeight={700} sx={{ color: '#1A2B5E' }}>Company Profile</Typography>
                   <Typography color="text.secondary">RC: 8371222 · Nature of Business: Real Estate Activities.</Typography>
                 </Box>
               </Stack>

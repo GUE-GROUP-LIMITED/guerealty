@@ -3,24 +3,24 @@ import { Box, Container, Typography, Grid, Link } from '@mui/material';
 
 const links = {
   Company: [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
+    { label: 'Home',       href: '/' },
+    { label: 'About',      href: '/about' },
     { label: 'Properties', href: '/properties' },
-    { label: 'Services', href: '/services' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Services',   href: '/services' },
+    { label: 'Contact',    href: '/contact' },
   ],
   Services: [
     { label: 'Real Estate Marketing', href: '/services' },
-    { label: 'Property Investment', href: '/services' },
-    { label: 'Development', href: '/services' },
-    { label: 'Appraisal', href: '/services' },
-    { label: 'Asset Management', href: '/services' },
+    { label: 'Property Investment',   href: '/services' },
+    { label: 'Development',           href: '/services' },
+    { label: 'Appraisal',             href: '/services' },
+    { label: 'Asset Management',      href: '/services' },
   ],
   Group: [
-    { label: 'Gue Group Limited', href: 'https://www.guegroup.com', external: true },
-    { label: 'Gue Cyber (Nigeria)', href: 'https://www.guecyber.ng', external: true },
-    { label: 'GUE Engineering Limited', href: 'https://www.gueengineering.com', external: true },
-    { label: 'Gue Cyber (Belgium)', href: 'https://www.guecyber.com', external: true },
+    { label: 'Gue Group Limited',       href: 'https://www.guegroup.com',     external: true },
+    { label: 'Gue Cyber (Nigeria)',      href: 'https://www.guecyber.ng',      external: true },
+    { label: 'GUE Engineering Limited', href: 'https://www.gueengineering.com',external: true },
+    { label: 'Gue Cyber (Belgium)',      href: 'https://www.guecyber.com',     external: true },
   ],
 };
 

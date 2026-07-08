@@ -23,7 +23,7 @@ export default function BrandLogo({ variant = 'desktop' }) {
       {/* Logo image */}
       <Box
         sx={{
-          width: isMobile ? 42 : 52,
+          width:  isMobile ? 42 : 52,
           height: isMobile ? 42 : 52,
           display: 'flex',
           alignItems: 'center',

@@ -17,11 +17,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import BrandLogo from './BrandLogo';
 
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
+  { label: 'Home',       href: '/' },
+  { label: 'About',      href: '/about' },
+  { label: 'Services',   href: '/services' },
   { label: 'Properties', href: '/properties' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Contact',    href: '/contact' },
 ];
 
 export default function Navigation() {
@@ -30,11 +30,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -136,7 +132,6 @@ export default function Navigation() {
             right: 0,
             height: '2px',
             background: 'linear-gradient(90deg, #CC2020 0%, #1A7A3C 55%, transparent 100%)',
-            pointerEvents: 'none',
           },
         }}
       >
@@ -199,29 +194,23 @@ export default function Navigation() {
               sx={{
                 display: { xs: 'flex', lg: 'none' },
                 ml: 1,
-            borderColor: 'white',
-            color: 'white',
-            '&:hover': {
-                  backgroundColor: 'rgba(255,255,255,0.2)',
-                },
-          }}
-        >
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                color: 'white',
+                '&:hover': { backgroundColor: 'rgba(255,255,255,0.2)' },
+              }}
+            >
               <MenuIcon />
             </IconButton>
           </Toolbar>
         </Container>
       </AppBar>
 
-      {/* Mobile Drawer */}
       <Drawer
         variant="temporary"
         anchor="right"
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
-        ModalProps={{
-          keepMounted: false,
-          disableScrollLock: true,
-        }}
+        ModalProps={{ keepMounted: true }}
         sx={{ display: { xs: 'block', lg: 'none' }, '& .MuiDrawer-paper': { width: 280 } }}
       >
         {drawer}

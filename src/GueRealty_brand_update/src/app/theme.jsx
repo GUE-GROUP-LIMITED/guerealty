@@ -4,28 +4,29 @@
 //   Accent (Green):      #1A7A3C  — buttons, links, highlights, CTAs
 //   Red:                 #CC2020  — badges, group identity accent
 //   Gold:                #D4A017  — premium feel, section accents
+
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 let theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1A2B5E',
-      light: '#2D4A8C',
-      dark: '#0F1A3A',
-      contrastText: '#ffffff',
+      main:          '#1A2B5E',   // Gue Realty navy
+      light:         '#2D4A8C',
+      dark:          '#0F1A3A',
+      contrastText:  '#ffffff',
     },
     secondary: {
-      main: '#1A7A3C',
-      light: '#22A050',
-      dark: '#125A2C',
-      contrastText: '#ffffff',
+      main:          '#1A7A3C',   // Gue Realty forest green
+      light:         '#22A050',
+      dark:          '#125A2C',
+      contrastText:  '#ffffff',
     },
     error: {
-      main: '#CC2020',
+      main: '#CC2020',            // Group red
     },
     warning: {
-      main: '#D4A017',
+      main: '#D4A017',            // Gold accent
     },
     success: {
       main: '#1A7A3C',
@@ -35,14 +36,14 @@ let theme = createTheme({
     },
     background: {
       default: '#F5F7FA',
-      paper: '#ffffff',
+      paper:   '#FFFFFF',
     },
     text: {
-      primary: '#1A2B5E',
+      primary:   '#1A2B5E',
       secondary: '#4A5568',
     },
     grey: {
-      50: '#F5F7FA',
+      50:  '#F5F7FA',
       100: '#EDF0F5',
       200: '#E2E8F0',
       300: '#CBD5E0',
@@ -59,16 +60,15 @@ let theme = createTheme({
       'BlinkMacSystemFont',
       'Segoe UI',
       'Arial',
-      'Helvetica',
       'sans-serif',
     ].join(','),
     h1: { fontWeight: 800, fontSize: '2.8rem', lineHeight: 1.15, letterSpacing: '-0.03em' },
-    h2: { fontWeight: 800, fontSize: '2.2rem', lineHeight: 1.2, letterSpacing: '-0.025em' },
+    h2: { fontWeight: 800, fontSize: '2.2rem', lineHeight: 1.2,  letterSpacing: '-0.025em' },
     h3: { fontWeight: 700, fontSize: '1.8rem', lineHeight: 1.25, letterSpacing: '-0.02em' },
     h4: { fontWeight: 700, fontSize: '1.4rem', lineHeight: 1.3 },
     h5: { fontWeight: 600, fontSize: '1.15rem', lineHeight: 1.4 },
-    h6: { fontWeight: 600, fontSize: '1rem', lineHeight: 1.4 },
-    body1: { fontSize: '1rem', lineHeight: 1.7 },
+    h6: { fontWeight: 600, fontSize: '1rem',   lineHeight: 1.4 },
+    body1: { fontSize: '1rem',    lineHeight: 1.7 },
     body2: { fontSize: '0.875rem', lineHeight: 1.6 },
     button: { fontWeight: 700, textTransform: 'none', letterSpacing: '0.01em' },
   },
@@ -159,9 +159,7 @@ let theme = createTheme({
     },
     MuiPaper: {
       styleOverrides: {
-        root: {
-          borderRadius: 12,
-        },
+        root: { borderRadius: 12 },
       },
     },
   },
