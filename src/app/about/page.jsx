@@ -1,10 +1,17 @@
-"use client";
-
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+
+export const metadata = {
+  title: "About",
+  description:
+    "Learn about GUE Realty Limited, our mission, vision, and credentials in real estate marketing, investment, development, appraisal, and property management.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (

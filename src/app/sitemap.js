@@ -1,50 +1,20 @@
-const getBaseUrl = () => {
-  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  if (configuredUrl) {
-    return configuredUrl.replace(/\/$/, "");
-  }
-
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
-
-  return "http://localhost:3000";
-};
+import { getBaseUrl } from "../lib/site";
 
 export default function sitemap() {
   const baseUrl = getBaseUrl();
   const lastModified = new Date();
-
-  return [
-    {
-      url: `${baseUrl}/`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/properties`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
+  const routes = [
+    { path: "/", changeFrequency: "weekly", priority: 1.0 },
+    { path: "/about", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/services", changeFrequency: "weekly", priority: 0.9 },
+    { path: "/properties", changeFrequency: "weekly", priority: 0.9 },
+    { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
   ];
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route.path}`,
+    lastModified,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }));
 }

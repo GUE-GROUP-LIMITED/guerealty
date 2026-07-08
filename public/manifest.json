@@ -1,11 +1,11 @@
 {
     "name": "GUE REALTY LIMITED",
     "short_name": "GUE REALTY",
-    "description": "ESG-compliant infrastructure finance, real estate development, and sustainable investment solutions across Africa",
+    "description": "Real estate marketing, investment, development, appraisal, and property management services across Nigeria",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#0064d7",
+    "background_color": "#F5F7FA",
+    "theme_color": "#1A2B5E",
     "icons": [
         {
             "src": "/logo.png",

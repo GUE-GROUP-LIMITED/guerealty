@@ -1,25 +1,18 @@
-const getBaseUrl = () => {
-  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  if (configuredUrl) {
-    return configuredUrl.replace(/\/$/, "");
-  }
-
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
-
-  return "http://localhost:3000";
-};
+import { getBaseUrl } from "../lib/site";
 
 export default function robots() {
   const baseUrl = getBaseUrl();
+  const host = new URL(baseUrl).host;
 
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/private/"],
+      },
+    ],
     sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    host,
   };
 }

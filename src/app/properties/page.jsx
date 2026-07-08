@@ -1,5 +1,3 @@
-"use client";
-
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -9,6 +7,15 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
+
+export const metadata = {
+  title: "Properties",
+  description:
+    "View GUE Realty property focus areas including managed school assets, acquired development land, and upcoming residential and commercial opportunities.",
+  alternates: {
+    canonical: "/properties",
+  },
+};
 
 export default function PropertiesPage() {
   return (
