@@ -5,6 +5,7 @@ import Providers from "./Providers";
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import ClientOnly from './components/ClientOnly';
+import { Analytics } from '@vercel/analytics/next';
 import {
   DEFAULT_OG_IMAGE,
   getBaseUrl,
@@ -132,6 +133,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
