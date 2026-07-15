@@ -26,8 +26,13 @@ export default function AboutPage() {
             content: '""',
             position: 'absolute',
             inset: 0,
-            background:
-              'linear-gradient(150deg, rgba(15,26,58,0.86) 0%, rgba(26,122,60,0.62) 100%), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80") center/cover',
+            backgroundImage: {
+              xs: 'linear-gradient(98deg, rgba(8,15,36,0.92) 0%, rgba(8,15,36,0.82) 44%, rgba(26,122,60,0.56) 100%), linear-gradient(180deg, rgba(10,16,35,0.30) 0%, rgba(10,16,35,0.36) 100%), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80")',
+              md: 'linear-gradient(98deg, rgba(8,15,36,0.84) 0%, rgba(8,15,36,0.70) 44%, rgba(26,122,60,0.50) 100%), linear-gradient(180deg, rgba(10,16,35,0.20) 0%, rgba(10,16,35,0.26) 100%), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80")',
+            },
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
           },
         }}
       >
@@ -50,21 +55,32 @@ export default function AboutPage() {
                 px: 2,
                 py: 0.7,
                 borderRadius: '999px',
-                border: '1px solid rgba(255,255,255,0.24)',
-                backgroundColor: 'rgba(255,255,255,0.12)',
-                mb: 3,
+                border: '1px solid rgba(255,255,255,0.30)',
+                backgroundColor: 'rgba(9,16,36,0.34)',
+                mb: 2.5,
               }}
             >
-              <Typography sx={{ fontSize: '0.72rem', letterSpacing: '0.1em', fontFamily: "'JetBrains Mono', monospace" }}>
+              <Typography sx={{ fontSize: '0.72rem', letterSpacing: '0.1em', fontFamily: "'JetBrains Mono', monospace", color: 'rgba(255,255,255,0.96)', textShadow: '0 1px 1px rgba(0,0,0,0.35)' }}>
                 ABOUT · GUE REALTY LIMITED
               </Typography>
             </Box>
-            <Typography variant="h2" fontWeight={800} sx={{ mb: 2, maxWidth: 860, letterSpacing: '-0.025em' }}>
+            <Typography
+              variant="h2"
+              fontWeight={{ xs: 760, md: 800 }}
+              sx={{
+                mb: 2.25,
+                maxWidth: 860,
+                letterSpacing: { xs: '-0.015em', md: '-0.025em' },
+                lineHeight: { xs: 1.08, md: 1.12 },
+                textShadow: { xs: '0 1px 1px rgba(0,0,0,0.26)', md: '0 1px 2px rgba(0,0,0,0.28)' },
+                textWrap: 'balance',
+              }}
+            >
               Building Trust Through Structured Real Estate Delivery
             </Typography>
             <Typography
               variant="h6"
-              sx={{ maxWidth: 860, color: 'rgba(255,255,255,0.9)', lineHeight: 1.75, fontWeight: 400 }}
+              sx={{ maxWidth: 860, color: 'rgba(255,255,255,0.96)', lineHeight: 1.75, fontWeight: 400, textShadow: '0 1px 1px rgba(0,0,0,0.22)' }}
             >
               GUE Realty Limited is an active subsidiary of GUE Group Limited, focused on practical,
               value-driven property services including marketing, investment, development, appraisal, and management.
