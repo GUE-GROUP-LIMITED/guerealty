@@ -1,0 +1,251 @@
+.footer {
+  position: relative;
+  background-color: var(--surface, #0e0e0e);
+  color: var(--text, #ffffff);
+  border-top: 1px solid var(--line, rgba(255, 255, 255, 0.1));
+  overflow: hidden;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Marquee */
+.marqueeSection {
+  width: 100%;
+  border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.1));
+  padding: 18px 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: scrollMarquee 42s linear infinite;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marqueeGroup {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-right: 32px;
+}
+
+.marqueeItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+
+.marqueeDot {
+  font-size: 10px;
+  color: var(--accent);
+}
+
+/* Main Grid */
+.mainGrid {
+  max-width: 1720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(64px, 8vw, 120px) var(--pad-x, 32px) clamp(48px, 6vw, 80px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+@media (min-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1.4fr 2fr;
+    gap: 80px;
+  }
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brandBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.brandInitials {
+  color: #ffffff;
+}
+
+.brandDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.blurb {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted, #8a8a8a);
+  max-width: 420px;
+}
+
+.legalBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.legalLine {
+  font-size: 11px;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.04em;
+}
+
+/* Links Grid */
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px 24px;
+}
+
+@media (min-width: 640px) {
+  .linksGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.linkCol {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.colHeading {
+  font-size: 11px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted, #8a8a8a);
+  margin: 0;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linkItem {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.linkItem:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.extArrow {
+  font-size: 12px;
+  color: var(--muted);
+  transition: color 0.25s, transform 0.25s;
+}
+
+.linkItem:hover .extArrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+/* Wordmark */
+.wordmarkWrap {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(24px, 4vw, 48px) var(--pad-x, 32px);
+  display: flex;
+  justify-content: center;
+  user-select: none;
+}
+
+.wordmark {
+  font-size: clamp(56px, 15vw, 240px);
+  font-weight: 600;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+  text-align: center;
+  transition: color 0.5s ease;
+}
+
+.wordmarkWrap:hover .wordmark {
+  color: rgba(255, 255, 255, 0.14);
+}
+
+/* Bottom bar */
+.bottomBar {
+  max-width: 1720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px var(--pad-x, 32px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.copyrightText,
+.taglineText {
+  letter-spacing: -0.01em;
+}
+
+.parentLink {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  transition: opacity 0.25s;
+}
+
+.parentLink:hover {
+  opacity: 0.8;
+}

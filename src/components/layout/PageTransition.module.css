@@ -1,0 +1,27 @@
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: #000;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  will-change: transform;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.6;
+}
+
+.mark {
+  font-size: clamp(28px, 5vw, 72px);
+  font-weight: 500;
+  letter-spacing: var(--ls-display);
+  text-transform: uppercase;
+  color: var(--text);
+}

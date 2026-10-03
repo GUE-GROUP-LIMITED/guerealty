@@ -1,0 +1,75 @@
+.outerCanvas {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+/* Ambient backdrop visible outside frame on wide screens */
+.desktopBackdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .desktopBackdrop {
+    display: block;
+  }
+}
+
+.backdropImg {
+  position: absolute;
+  inset: -10%;
+  width: 120%;
+  height: 120%;
+  filter: blur(48px) brightness(0.22) saturate(1.4);
+  transform: scale(1.08);
+}
+
+.backdropOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+.frameContainer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .frameContainer {
+    padding: var(--frame-top, 40px) var(--frame-x, 48px);
+  }
+}
+
+.innerFrame {
+  position: relative;
+  width: 100%;
+  max-width: 1720px;
+  background-color: var(--bg, #000000);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .innerFrame {
+    border-radius: var(--r-frame, 36px);
+    border: 1px solid var(--line, rgba(255, 255, 255, 0.10));
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+  }
+}
