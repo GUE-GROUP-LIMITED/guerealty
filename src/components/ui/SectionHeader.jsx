@@ -49,7 +49,6 @@ export default function SectionHeader({
       <div className={styles.leftCol}>
         {category && (
           <div className={styles.categoryBadge}>
-            <span className={styles.categoryDot} />
             <span>{typeof category === "string" ? category.replace(/^\/\/\s*/, "") : category}</span>
           </div>
         )}

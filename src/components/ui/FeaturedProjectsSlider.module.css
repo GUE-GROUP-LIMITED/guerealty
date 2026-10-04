@@ -72,10 +72,23 @@
 }
 
 .serviceTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: #c59341;
+  background: linear-gradient(135deg, #d89b38 0%, #b8860b 100%);
+  color: #ffffff !important;
   font-family: monospace;
   font-size: 10px;
-  letter-spacing: 0.14em;
-  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 10px rgba(184, 134, 11, 0.35);
+  margin-bottom: 4px;
 }
 
 .serviceDesc {

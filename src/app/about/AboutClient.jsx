@@ -73,7 +73,6 @@ export default function AboutClient() {
 
         <div ref={heroContentRef} className={styles.heroContent}>
           <div className={styles.eyebrowBadge}>
-            <span className={styles.badgeDot} />
             <span>ABOUT · GUE REALTY LIMITED</span>
           </div>
 
@@ -96,7 +95,6 @@ export default function AboutClient() {
               <div className={styles.cardGlowMission} />
               <div>
                 <div className={`${styles.mvTag} ${styles.missionTag}`}>
-                  <span className={styles.badgeDot} />
                   <span>Corporate Mission</span>
                 </div>
                 <h2 className={styles.mvTitle}>Mission</h2>
@@ -111,7 +109,6 @@ export default function AboutClient() {
               <div className={styles.cardGlowVision} />
               <div>
                 <div className={`${styles.mvTag} ${styles.visionTag}`}>
-                  <span className={styles.badgeDot} />
                   <span>Corporate Vision</span>
                 </div>
                 <h2 className={styles.mvTitle}>Vision</h2>

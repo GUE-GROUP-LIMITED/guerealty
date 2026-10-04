@@ -154,8 +154,7 @@ export default function BentoGrid() {
           className={`${styles.card} ${styles.diasporaCard}`}
         >
           <div className={styles.diasporaBadge}>
-            <span className={styles.badgeDot} />
-            <span>06</span>
+            <span>06 · DIASPORA SERVICES</span>
           </div>
           <div className={styles.diasporaBody}>
             <h3 className={styles.diasporaTitle}>Diaspora Property Services</h3>

@@ -82,7 +82,6 @@ export default function PropertiesClient() {
 
         <div ref={heroContentRef} className={styles.heroContent}>
           <div className={styles.eyebrowBadge}>
-            <span className={styles.badgeDot} />
             <span>PROPERTIES · GUE REALTY</span>
           </div>
 

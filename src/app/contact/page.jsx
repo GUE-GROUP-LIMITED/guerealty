@@ -133,7 +133,6 @@ export default function ContactPage() {
 
           <div ref={heroContentRef} className={styles.heroContent}>
             <div className={styles.eyebrowBadge}>
-              <span className={styles.badgeDot} />
               <span>CONTACT · GUE REALTY LIMITED</span>
             </div>
 

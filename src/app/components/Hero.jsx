@@ -15,7 +15,12 @@ const HERO_SLIDES = [
     name: "film-a",
     line1: "VISIONARY",
     line2: "REALTY",
-    tagline: "GUE Realty Limited · Built for Nigeria · RC 8371222",
+    badge: "VISIONARY REALTY",
+    cardHeading: "Visionary Real Estate Solutions",
+    cardSub: "Operating under GUE Group Limited (RC 8371222), delivering structured, technology-driven property services across Nigeria.",
+    cardThumb: "balconies",
+    cornerRight: "Minimal design. Maximum intelligence. Absolute standard.",
+    cornerBottom: "Premium real estate designed for sustainable growth — where asset management and development meet in Nigeria.",
   },
   {
     id: "slide-2",
@@ -23,7 +28,12 @@ const HERO_SLIDES = [
     name: "tower-dusk",
     line1: "STRATEGIC",
     line2: "INVESTMENT",
-    tagline: "High-Potential Assets & Strategic Land Acquisition",
+    badge: "PROPERTY INVESTMENT",
+    cardHeading: "High-Potential Asset Acquisition",
+    cardSub: "Connecting investors with prime land banks and commercial opportunities backed by verified title documentation.",
+    cardThumb: "city-dusk",
+    cornerRight: "Strategic land acquisition. Capital growth. Market returns.",
+    cornerBottom: "Empowering institutional partners and private investors with high-yield property assets.",
   },
   {
     id: "slide-3",
@@ -31,7 +41,12 @@ const HERO_SLIDES = [
     name: "city-dusk",
     line1: "STRUCTURED",
     line2: "DEVELOPMENT",
-    tagline: "End-to-End Residential & Commercial Project Delivery",
+    badge: "PROPERTY DEVELOPMENT",
+    cardHeading: "End-to-End Project Delivery",
+    cardSub: "Comprehensive oversight from site planning and contractor management through to turnkey community delivery.",
+    cardThumb: "glass-towers",
+    cornerRight: "Master planning. Precision engineering. Quality delivery.",
+    cornerBottom: "Developing modern infrastructure that responds directly to Nigeria's urban housing demand.",
   },
   {
     id: "slide-4",
@@ -39,7 +54,12 @@ const HERO_SLIDES = [
     name: "glass-towers",
     line1: "PORTFOLIO",
     line2: "MANAGEMENT",
-    tagline: "Valuation, Asset Oversight & Long-Term Capital Growth",
+    badge: "ASSET MANAGEMENT",
+    cardHeading: "Appraisal & Facility Oversight",
+    cardSub: "Professional asset management across operational schools, commercial facilities, and independent valuation.",
+    cardThumb: "tower-dusk",
+    cornerRight: "Independent valuation. Tenant relations. Asset growth.",
+    cornerBottom: "Active stewardship protecting and enhancing long-term property portfolio valuations.",
   },
   {
     id: "slide-5",
@@ -47,7 +67,12 @@ const HERO_SLIDES = [
     name: "balconies",
     line1: "DIASPORA",
     line2: "ASSURANCE",
-    tagline: "Transparent Property Ownership from Anywhere in the World",
+    badge: "DIASPORA GATEWAY",
+    cardHeading: "Safe, Verified Global Ownership",
+    cardSub: "Transparent property acquisition, title verification, and remote management for Nigerians living abroad.",
+    cardThumb: "balconies",
+    cornerRight: "Zero risk. Remote documentation. Direct representation.",
+    cornerBottom: "Providing the diaspora a seamless, trusted avenue to build enduring real estate equity at home.",
   },
 ];
 
@@ -167,6 +192,18 @@ export default function Hero() {
             onComplete: () => split.revert(),
           }
         );
+
+        gsap.fromTo(
+          `.${styles.glassCardContent}`,
+          { opacity: 0, y: 12 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+        );
+
+        gsap.fromTo(
+          `.${styles.microTextRight}`,
+          { opacity: 0, y: 6 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+        );
       }
     },
     { dependencies: [current, readyToPlay], scope: containerRef }
@@ -217,26 +254,22 @@ export default function Hero() {
         <div className={styles.vignetteOverlay} />
       </div>
 
-      {/* Corner Micro-descriptor Texts (replicated from reference) */}
+      {/* Corner Micro-descriptor Texts */}
       <div className={styles.cornerTL}>
-        <span className={styles.statusDot} />
-        <p className={styles.microText}>
-          GUE REALTY LIMITED · RC 8371222<br />
-          A GUE GROUP COMPANY
-        </p>
+        <div className={styles.heroCornerBadge}>
+          GUE REALTY LIMITED · RC 8371222
+        </div>
       </div>
 
       <div className={styles.cornerTR}>
         <p className={styles.microTextRight}>
-          Minimal design. Maximum intelligence.<br />
-          Absolute standard.
+          {activeSlide.cornerRight}
         </p>
       </div>
 
       <div className={styles.cornerBR}>
         <p className={styles.microTextRight}>
-          Premium real estate designed for sustainable growth —<br />
-          where asset management and development meet in Nigeria.
+          {activeSlide.cornerBottom}
         </p>
       </div>
 
@@ -271,26 +304,26 @@ export default function Hero() {
         </svg>
       </button>
 
-      {/* Bottom Left Frosted Glass Card */}
+      {/* Bottom Left Frosted Glass Card - Updates with active slide */}
       <div className={styles.bottomLeftCard}>
         <div className={styles.glassCardInner}>
           <div className={styles.glassCardThumb}>
             <Picture
-              name="balconies"
-              alt="Homes from the Future"
+              key={activeSlide.cardThumb}
+              name={activeSlide.cardThumb}
+              alt={activeSlide.cardHeading}
               sizes="80px"
               fill={false}
               className={styles.thumbPic}
             />
           </div>
           <div className={styles.glassCardContent}>
+            <div className={styles.heroCardBadge}>{activeSlide.badge}</div>
             <h4 className={styles.glassCardHeading}>
-              Real Estate from the Future.<br />
-              Built for Nigeria.
+              {activeSlide.cardHeading}
             </h4>
             <p className={styles.glassCardSub}>
-              Operational & active portfolio: school assets, acquired development land,
-              and structured real estate services.
+              {activeSlide.cardSub}
             </p>
           </div>
         </div>

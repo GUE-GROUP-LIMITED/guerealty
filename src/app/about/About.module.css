@@ -54,26 +54,19 @@
 .eyebrowBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.08);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 999px;
+  justify-content: center;
+  padding: 6px 14px;
+  background: #c59341;
+  background: linear-gradient(135deg, #d89b38 0%, #b8860b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
   font-family: monospace;
   font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--accent);
+  color: #ffffff !important;
   text-transform: uppercase;
-}
-
-.badgeDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 8px var(--accent);
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.35);
 }
 
 .heroTitle {
@@ -163,27 +156,26 @@
 .mvTag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 5px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  justify-content: center;
+  padding: 5px 12px;
+  border-radius: 4px;
+  background: #c59341;
+  background: linear-gradient(135deg, #d89b38 0%, #b8860b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   font-family: monospace;
   font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #ffffff !important;
   margin-bottom: 14px;
   width: fit-content;
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
 }
 
-.missionTag {
-  color: var(--accent);
-  border-color: rgba(232, 178, 106, 0.25);
-}
-
+.missionTag,
 .visionTag {
-  color: #70a6f8;
-  border-color: rgba(112, 166, 248, 0.25);
+  color: #ffffff !important;
 }
 
 .mvTitle {
