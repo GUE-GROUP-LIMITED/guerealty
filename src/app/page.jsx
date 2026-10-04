@@ -25,7 +25,7 @@ export default function Home() {
         <SectionHeader
           title="REDEFINING MODERN LIVING"
           descriptor="From visionary architecture to sustainable design, our projects shape the future of residential and commercial experiences across Nigeria."
-          category="// Corporate Overview"
+          category="Corporate Overview"
         />
 
         <WordReveal

@@ -95,7 +95,10 @@ export default function AboutClient() {
             <div className={styles.mvCard}>
               <div className={styles.cardGlowMission} />
               <div>
-                <span className={`${styles.mvTag} ${styles.missionTag}`}>// Mission</span>
+                <div className={`${styles.mvTag} ${styles.missionTag}`}>
+                  <span className={styles.badgeDot} />
+                  <span>Corporate Mission</span>
+                </div>
                 <h2 className={styles.mvTitle}>Mission</h2>
               </div>
               <p className={styles.mvText}>
@@ -107,7 +110,10 @@ export default function AboutClient() {
             <div className={styles.mvCard}>
               <div className={styles.cardGlowVision} />
               <div>
-                <span className={`${styles.mvTag} ${styles.visionTag}`}>// Vision</span>
+                <div className={`${styles.mvTag} ${styles.visionTag}`}>
+                  <span className={styles.badgeDot} />
+                  <span>Corporate Vision</span>
+                </div>
                 <h2 className={styles.mvTitle}>Vision</h2>
               </div>
               <p className={styles.mvText}>

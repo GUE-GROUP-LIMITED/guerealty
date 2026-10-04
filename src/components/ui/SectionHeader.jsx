@@ -47,7 +47,12 @@ export default function SectionHeader({
   return (
     <div ref={containerRef} className={`${styles.header} ${className}`}>
       <div className={styles.leftCol}>
-        {category && <div className={styles.category}>{category}</div>}
+        {category && (
+          <div className={styles.categoryBadge}>
+            <span className={styles.categoryDot} />
+            <span>{typeof category === "string" ? category.replace(/^\/\/\s*/, "") : category}</span>
+          </div>
+        )}
         <h2 ref={titleRef} className={styles.title}>
           {title}
         </h2>

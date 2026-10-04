@@ -11,43 +11,43 @@ import styles from "./Hero.module.css";
 const HERO_SLIDES = [
   {
     id: "slide-1",
-    type: "image",
-    name: "tower-dusk",
-    line1: "REAL ESTATE",
-    line2: "SOLUTIONS",
-    tagline: "Built for Nigeria · Operational & Active",
+    type: "video",
+    name: "film-a",
+    line1: "VISIONARY",
+    line2: "REALTY",
+    tagline: "GUE Realty Limited · Built for Nigeria · RC 8371222",
   },
   {
     id: "slide-2",
-    type: "video",
-    name: "film-a",
-    line1: "FUTURE OF",
-    line2: "LIVING",
-    tagline: "Connecting Buyers, Sellers & Investors",
+    type: "image",
+    name: "tower-dusk",
+    line1: "STRATEGIC",
+    line2: "INVESTMENT",
+    tagline: "High-Potential Assets & Strategic Land Acquisition",
   },
   {
     id: "slide-3",
     type: "image",
     name: "city-dusk",
-    line1: "PROPERTY",
-    line2: "INVESTMENT",
-    tagline: "High-Potential Assets & Strategic Land Banks",
+    line1: "STRUCTURED",
+    line2: "DEVELOPMENT",
+    tagline: "End-to-End Residential & Commercial Project Delivery",
   },
   {
     id: "slide-4",
     type: "image",
     name: "glass-towers",
-    line1: "SUSTAINABLE",
-    line2: "DEVELOPMENT",
-    tagline: "Residential & Commercial Projects Delivery",
+    line1: "PORTFOLIO",
+    line2: "MANAGEMENT",
+    tagline: "Valuation, Asset Oversight & Long-Term Capital Growth",
   },
   {
     id: "slide-5",
     type: "image",
     name: "balconies",
-    line1: "ASSET",
-    line2: "MANAGEMENT",
-    tagline: "Enhancing Value & Protecting Client Portfolios",
+    line1: "DIASPORA",
+    line2: "ASSURANCE",
+    tagline: "Transparent Property Ownership from Anywhere in the World",
   },
 ];
 
@@ -247,6 +247,29 @@ export default function Hero() {
           <span className={styles.titleLine2}>{activeSlide.line2}</span>
         </h1>
       </div>
+
+      {/* Hero Slider Navigation Arrows */}
+      <button
+        type="button"
+        onClick={prev}
+        className={`${styles.heroNavArrow} ${styles.heroNavPrev}`}
+        aria-label="Previous slide"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M19 12H5M12 19l-7-7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        onClick={next}
+        className={`${styles.heroNavArrow} ${styles.heroNavNext}`}
+        aria-label="Next slide"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
 
       {/* Bottom Left Frosted Glass Card */}
       <div className={styles.bottomLeftCard}>

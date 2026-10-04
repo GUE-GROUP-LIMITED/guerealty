@@ -89,21 +89,40 @@
 .brandBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
+  gap: 16px;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
 }
 
-.brandInitials {
+.brandBadge:hover {
+  opacity: 0.9;
+}
+
+.footerLogoImg {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(232, 178, 106, 0.25));
+}
+
+.brandInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brandName {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   color: #ffffff;
 }
 
-.brandDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--accent);
+.brandSub {
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
 }
 
 .blurb {
@@ -196,10 +215,30 @@
   overflow: hidden;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: clamp(24px, 4vw, 48px) var(--pad-x, 32px);
+  padding: clamp(32px, 5vw, 64px) var(--pad-x, 32px);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
   user-select: none;
+}
+
+.wordmarkEmblemWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wordmarkEmblem {
+  width: clamp(48px, 6vw, 72px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 20px rgba(232, 178, 106, 0.3));
+  transition: transform 0.5s ease;
+}
+
+.wordmarkWrap:hover .wordmarkEmblem {
+  transform: scale(1.08);
 }
 
 .wordmark {

@@ -20,13 +20,33 @@
   max-width: 900px;
 }
 
-.category {
+.categoryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   font-family: monospace;
   font-size: 11px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 18px;
+  width: fit-content;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.categoryDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
 }
 
 .title {

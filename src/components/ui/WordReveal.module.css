@@ -32,6 +32,7 @@
 
 .word {
   display: inline-block;
+  margin-right: 0.28em;
   will-change: opacity;
   transition: opacity 0.1s linear;
 }

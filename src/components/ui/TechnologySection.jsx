@@ -10,7 +10,7 @@ export default function TechnologySection() {
         <SectionHeader
           title="BUILT WITH NEXT-GEN TECHNOLOGY"
           descriptor="We combine structured real estate delivery and digital asset intelligence to create properties that endure, adapt, and appreciate."
-          category="// Technology & Standards"
+          category="Technology & Standards"
         />
 
         <div className={styles.contentGrid}>

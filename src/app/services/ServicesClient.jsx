@@ -158,7 +158,7 @@ export default function ServicesClient() {
         <div ref={heroContentRef} className={styles.heroContent}>
           <div className={styles.eyebrowBadge}>
             <span className={styles.badgeDot} />
-            <span>// OUR SERVICES</span>
+            <span>OUR SERVICES</span>
           </div>
 
           <h1 className={styles.heroTitle}>Complete Real Estate Solutions</h1>

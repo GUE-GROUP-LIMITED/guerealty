@@ -87,7 +87,7 @@ export default function FeaturedProjectsSlider() {
         <SectionHeader
           title="FEATURED PROJECTS"
           descriptor="Explore our latest developments, portfolio properties, and structured real estate offerings across Nigeria."
-          category="// Portfolio Focus"
+          category="Portfolio Focus"
         />
       </div>
 

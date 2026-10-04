@@ -3,7 +3,7 @@
  * Text is moved verbatim from the original Services component so the
  * legacy /services page and the redesigned home use one source of truth.
  */
-export const SERVICES_LABEL = "// Our Services";
+export const SERVICES_LABEL = "Our Services";
 export const SERVICES_TITLE = "Complete Real Estate Solutions";
 export const SERVICES_SUBTITLE =
   "From marketing a single property to managing a full portfolio — GUE Realty delivers professional real estate services rooted in the MEMART objects of the company.";

@@ -314,3 +314,52 @@
   height: 100%;
   background: var(--accent);
 }
+
+/* Hero Slider Navigation Arrows */
+.heroNavArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 15;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.45);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.heroNavArrow:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.25);
+}
+
+.heroNavArrow:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.heroNavPrev {
+  left: clamp(16px, 3.5vw, 48px);
+}
+
+.heroNavNext {
+  right: clamp(16px, 3.5vw, 48px);
+}
+
+@media (max-width: 640px) {
+  .heroNavArrow {
+    width: 42px;
+    height: 42px;
+  }
+}
+

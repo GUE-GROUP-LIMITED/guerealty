@@ -45,10 +45,19 @@ export default function Footer() {
       {/* Main footer grid */}
       <div className={styles.mainGrid}>
         <div className={styles.brandCol}>
-          <div className={styles.brandBadge}>
-            <span className={styles.brandInitials}>GUE</span>
-            <span className={styles.brandDot} />
-          </div>
+          <Link href="/" className={styles.brandBadge} aria-label="GUE Realty Home">
+            <img
+              src="/logo.png"
+              alt="GUE Realty Limited Logo"
+              className={styles.footerLogoImg}
+              width={48}
+              height={48}
+            />
+            <div className={styles.brandInfo}>
+              <span className={styles.brandName}>GUE REALTY</span>
+              <span className={styles.brandSub}>LIMITED · RC 8371222</span>
+            </div>
+          </Link>
           <p className={styles.blurb}>{footerBlurb}</p>
           <div className={styles.legalBlock}>
             {footerLegal.map((line, i) => (
@@ -88,8 +97,17 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Giant uppercase wordmark */}
+      {/* Giant uppercase wordmark with logo emblem */}
       <div className={styles.wordmarkWrap}>
+        <div className={styles.wordmarkEmblemWrap}>
+          <img
+            src="/logo.png"
+            alt="GUE Realty Emblem"
+            className={styles.wordmarkEmblem}
+            width={64}
+            height={64}
+          />
+        </div>
         <div className={styles.wordmark}>GUE REALTY</div>
       </div>
 
