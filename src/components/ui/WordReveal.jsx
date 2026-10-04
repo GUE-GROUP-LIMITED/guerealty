@@ -55,7 +55,7 @@ export default function WordReveal({
                 ref={(el) => (wordsRef.current[i] = el)}
                 className={styles.word}
               >
-                {word}
+                {word}{" "}
               </span>
             ))}
           </p>
