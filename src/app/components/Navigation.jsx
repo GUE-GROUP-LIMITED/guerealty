@@ -84,8 +84,13 @@ export default function Navigation() {
           {/* Top-Left Floating Glass Pill Nav */}
           <nav className={styles.glassPillNav} aria-label="Main Navigation">
             <Link href="/" className={styles.logoBadge} aria-label="GUE Realty Home">
-              <span className={styles.logoGue}>GUE</span>
-              <span className={styles.logoDot} />
+              <img
+                src="/logo.png"
+                alt="GUE Realty Limited"
+                className={styles.navLogoImg}
+                width={28}
+                height={28}
+              />
             </Link>
             <div className={styles.desktopLinks}>
               {navItems.map((item) => {
@@ -141,6 +146,17 @@ export default function Navigation() {
         aria-hidden={!mobileOpen}
       >
         <div className={styles.mobileMenuContent}>
+          <div className={styles.mobileBrandHeader}>
+            <img
+              src="/logo.png"
+              alt="GUE Realty Limited"
+              width={36}
+              height={36}
+              className={styles.navLogoImg}
+            />
+            <span className={styles.mobileBrandText}>GUE REALTY</span>
+          </div>
+
           <div className={styles.mobileNavLinks}>
             {navItems.map((item, idx) => (
               <div

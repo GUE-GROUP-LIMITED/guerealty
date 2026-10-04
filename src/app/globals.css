@@ -63,8 +63,8 @@
 @media (min-width: 768px) {
   :root {
     --gutter: 24px;
-    --frame-x: clamp(16px, 6vw, 88px);
-    --frame-top: clamp(16px, 2.8vw, 40px);
+    --frame-x: 0px;
+    --frame-top: 0px;
   }
 }
 

@@ -75,18 +75,6 @@
   margin: 0;
 }
 
-.emptyCell {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .emptyCell.desktopOnly {
-    display: block;
-    background: transparent;
-    border: none;
-  }
-}
-
 /* Wide Media Card */
 .mediaCard {
   padding: 0;
@@ -132,8 +120,82 @@
   color: #ffffff;
 }
 
+.diasporaCard {
+  background: linear-gradient(145deg, #121212 0%, #0a0a0a 100%);
+  border: 1px solid var(--line);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 @media (min-width: 1024px) {
-  .alignRight {
-    grid-column: 4;
+  .diasporaCard {
+    grid-column: span 2;
   }
+}
+
+.diasporaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.diasporaBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.diasporaTitle {
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.diasporaDesc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.diasporaFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.regInfo {
+  font-size: 11px;
+  font-family: monospace;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.diasporaLink {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.diasporaCard:hover .diasporaLink {
+  transform: translateX(4px);
 }

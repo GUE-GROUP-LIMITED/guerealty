@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import Link from "next/link";
 import { gsap, ScrollTrigger, useGSAP, prefersReducedMotion } from "../../lib/gsap";
 import Picture from "./Picture";
 import BgVideo from "./BgVideo";
@@ -108,72 +109,32 @@ export default function BentoGrid() {
   return (
     <div ref={containerRef} className={styles.bentoWrap}>
       <div className={styles.grid}>
-        {/* Row 1, Card 1: Stat 1 */}
-        <div
-          ref={(el) => (cardsRef.current[0] = el)}
-          className={`${styles.card} ${styles.statCard}`}
-        >
-          <div className={styles.statNumber}>
-            <span
-              data-num-target={BENTO_STATS[0].value}
-              data-prefix={BENTO_STATS[0].prefix}
-              data-suffix={BENTO_STATS[0].suffix}
-            >
-              {BENTO_STATS[0].num}
-            </span>
+        {/* Row 1: All 4 stats across 4 columns */}
+        {BENTO_STATS.map((stat, idx) => (
+          <div
+            key={stat.label}
+            ref={(el) => (cardsRef.current[idx] = el)}
+            className={`${styles.card} ${styles.statCard}`}
+          >
+            <div className={styles.statNumber}>
+              <span
+                data-num-target={stat.value}
+                data-prefix={stat.prefix}
+                data-suffix={stat.suffix}
+              >
+                {stat.num}
+              </span>
+            </div>
+            <div className={styles.statMeta}>
+              <h3 className={styles.statLabel}>{stat.label}</h3>
+              <p className={styles.statSub}>{stat.sub}</p>
+            </div>
           </div>
-          <div className={styles.statMeta}>
-            <h3 className={styles.statLabel}>{BENTO_STATS[0].label}</h3>
-            <p className={styles.statSub}>{BENTO_STATS[0].sub}</p>
-          </div>
-        </div>
+        ))}
 
-        {/* Row 1, Intentional empty cell / spacer on desktop */}
-        <div className={`${styles.emptyCell} ${styles.desktopOnly}`} aria-hidden="true" />
-
-        {/* Row 1, Card 2: Stat 2 */}
+        {/* Row 2: Wide Video Card (2 cols) + Diaspora Assurance Card (2 cols) */}
         <div
-          ref={(el) => (cardsRef.current[1] = el)}
-          className={`${styles.card} ${styles.statCard}`}
-        >
-          <div className={styles.statNumber}>
-            <span
-              data-num-target={BENTO_STATS[1].value}
-              data-prefix={BENTO_STATS[1].prefix}
-              data-suffix={BENTO_STATS[1].suffix}
-            >
-              {BENTO_STATS[1].num}
-            </span>
-          </div>
-          <div className={styles.statMeta}>
-            <h3 className={styles.statLabel}>{BENTO_STATS[1].label}</h3>
-            <p className={styles.statSub}>{BENTO_STATS[1].sub}</p>
-          </div>
-        </div>
-
-        {/* Row 1, Card 3: Stat 3 */}
-        <div
-          ref={(el) => (cardsRef.current[2] = el)}
-          className={`${styles.card} ${styles.statCard}`}
-        >
-          <div className={styles.statNumber}>
-            <span
-              data-num-target={BENTO_STATS[2].value}
-              data-prefix={BENTO_STATS[2].prefix}
-              data-suffix={BENTO_STATS[2].suffix}
-            >
-              {BENTO_STATS[2].num}
-            </span>
-          </div>
-          <div className={styles.statMeta}>
-            <h3 className={styles.statLabel}>{BENTO_STATS[2].label}</h3>
-            <p className={styles.statSub}>{BENTO_STATS[2].sub}</p>
-          </div>
-        </div>
-
-        {/* Row 2: Wide Video/Image Card (span 2 cols) */}
-        <div
-          ref={(el) => (cardsRef.current[3] = el)}
+          ref={(el) => (cardsRef.current[4] = el)}
           className={`${styles.card} ${styles.mediaCard}`}
         >
           <BgVideo
@@ -188,23 +149,24 @@ export default function BentoGrid() {
           </div>
         </div>
 
-        {/* Row 2, Card 4: Stat 4 */}
         <div
-          ref={(el) => (cardsRef.current[4] = el)}
-          className={`${styles.card} ${styles.statCard} ${styles.alignRight}`}
+          ref={(el) => (cardsRef.current[5] = el)}
+          className={`${styles.card} ${styles.diasporaCard}`}
         >
-          <div className={styles.statNumber}>
-            <span
-              data-num-target={BENTO_STATS[3].value}
-              data-prefix={BENTO_STATS[3].prefix}
-              data-suffix={BENTO_STATS[3].suffix}
-            >
-              {BENTO_STATS[3].num}
-            </span>
+          <div className={styles.diasporaBadge}>
+            <span className={styles.badgeDot} />
+            <span>06</span>
           </div>
-          <div className={styles.statMeta}>
-            <h3 className={styles.statLabel}>{BENTO_STATS[3].label}</h3>
-            <p className={styles.statSub}>{BENTO_STATS[3].sub}</p>
+          <div className={styles.diasporaBody}>
+            <h3 className={styles.diasporaTitle}>Diaspora Property Services</h3>
+            <p className={styles.diasporaDesc}>
+              Trusted property acquisition, management, and investment services for Nigerians abroad — giving the
+              diaspora a safe and transparent route to own and grow property at home.
+            </p>
+          </div>
+          <div className={styles.diasporaFooter}>
+            <span className={styles.regInfo}>RC 8371222 · A Gue Group Company</span>
+            <Link href="/contact" className={styles.diasporaLink}>Get in Touch →</Link>
           </div>
         </div>
       </div>

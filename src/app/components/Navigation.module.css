@@ -52,24 +52,38 @@
 .logoBadge {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  font-size: 14px;
-  color: #ffffff;
+  gap: 8px;
   padding-right: 12px;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.25s ease;
 }
 
-.logoGue {
+.logoBadge:hover {
+  transform: scale(1.05);
+}
+
+.navLogoImg {
+  height: 24px;
+  width: auto;
+  max-width: 32px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.mobileBrandHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileBrandText {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: #ffffff;
-}
-
-.logoDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--accent, #e8b26a);
 }
 
 .desktopLinks {
