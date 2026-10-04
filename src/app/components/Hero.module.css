@@ -140,7 +140,7 @@
   max-width: 320px;
 }
 
-/* Center Giant Title */
+/* Center Giant Title Stack */
 .centerTitleWrap {
   position: relative;
   z-index: 10;
@@ -149,9 +149,12 @@
   margin: auto 0;
   width: 100%;
   max-width: 1400px;
+  display: grid;
+  place-items: center;
 }
 
 .displayTitle {
+  grid-area: 1 / 1;
   font-size: var(--fs-display, clamp(48px, 9.6vw, 168px));
   font-weight: 500;
   line-height: 0.88;
@@ -162,20 +165,63 @@
   flex-direction: column;
   align-items: center;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.7s;
+  pointer-events: none;
 }
 
-.titleLine1 {
+.displayTitleActive {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.displayTitleHidden {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.titleLineWrap {
   display: block;
+  overflow: hidden;
+  padding: 4px 0;
 }
 
+.titleLine1,
 .titleLine2 {
   display: block;
-  color: #ffffff;
+  transform: translateY(115%);
+  opacity: 0;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
-.charAnim {
-  display: inline-block;
-  will-change: transform, opacity;
+.displayTitleActive .titleLine1 {
+  transform: translateY(0%);
+  opacity: 1;
+  transition-delay: 0.05s;
+}
+
+.displayTitleActive .titleLine2 {
+  transform: translateY(0%);
+  opacity: 1;
+  transition-delay: 0.18s;
+}
+
+.displayTitleHidden .titleLine1 {
+  transform: translateY(-30%);
+  opacity: 0;
+  transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+  transition-delay: 0s;
+}
+
+.displayTitleHidden .titleLine2 {
+  transform: translateY(-30%);
+  opacity: 0;
+  transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+  transition-delay: 0s;
 }
 
 /* Bottom Left Frosted Glass Card */

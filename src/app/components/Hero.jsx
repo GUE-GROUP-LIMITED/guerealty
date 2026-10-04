@@ -82,7 +82,6 @@ export default function Hero() {
   const [readyToPlay, setReadyToPlay] = useState(false);
 
   const containerRef = useRef(null);
-  const titleRef = useRef(null);
   const progressBarsRef = useRef([]);
   const slidesRef = useRef([]);
   const timerRef = useRef(null);
@@ -167,32 +166,12 @@ export default function Hero() {
     };
   }, [current, isPaused, next, readyToPlay]);
 
-  // Transition animation when slide changes (SplitText title + image reveal)
+  // Transition animation when slide changes (card content + micro texts)
   useGSAP(
     () => {
       if (!readyToPlay) return;
-      const title = titleRef.current;
-      if (!title) return;
 
       if (!prefersReducedMotion()) {
-        const split = new SplitText(title, {
-          type: "lines,words,chars",
-          charsClass: styles.charAnim,
-        });
-
-        gsap.fromTo(
-          split.chars,
-          { yPercent: 120, opacity: 0 },
-          {
-            yPercent: 0,
-            opacity: 1,
-            duration: 0.85,
-            stagger: 0.02,
-            ease: "power3.out",
-            onComplete: () => split.revert(),
-          }
-        );
-
         gsap.fromTo(
           `.${styles.glassCardContent}`,
           { opacity: 0, y: 12 },
@@ -275,10 +254,25 @@ export default function Hero() {
 
       {/* Center Giant 2-Line Title Overlapping Visuals */}
       <div className={styles.centerTitleWrap}>
-        <h1 ref={titleRef} className={styles.displayTitle}>
-          <span className={styles.titleLine1}>{activeSlide.line1}</span>
-          <span className={styles.titleLine2}>{activeSlide.line2}</span>
-        </h1>
+        {HERO_SLIDES.map((slide, idx) => {
+          const isActive = idx === current;
+          return (
+            <h1
+              key={slide.id}
+              className={`${styles.displayTitle} ${
+                isActive ? styles.displayTitleActive : styles.displayTitleHidden
+              }`}
+              aria-hidden={!isActive}
+            >
+              <span className={styles.titleLineWrap}>
+                <span className={styles.titleLine1}>{slide.line1}</span>
+              </span>
+              <span className={styles.titleLineWrap}>
+                <span className={styles.titleLine2}>{slide.line2}</span>
+              </span>
+            </h1>
+          );
+        })}
       </div>
 
       {/* Hero Slider Navigation Arrows */}
