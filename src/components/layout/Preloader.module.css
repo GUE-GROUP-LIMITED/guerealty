@@ -1,0 +1,75 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  will-change: transform;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: min(90vw, 400px);
+  text-align: center;
+}
+
+.brand {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.counterWrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  line-height: 0.9;
+}
+
+.number {
+  font-family: var(--font);
+  font-size: clamp(64px, 12vw, 120px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+}
+
+.percent {
+  font-family: var(--font);
+  font-size: clamp(20px, 3vw, 32px);
+  color: var(--accent);
+  margin-left: 4px;
+}
+
+.barTrack {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.barFill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #ffffff);
+  transition: width 0.05s linear;
+}
+
+.tagline {
+  font-size: 10px;
+  font-family: monospace;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-top: 8px;
+}

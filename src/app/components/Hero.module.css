@@ -1,0 +1,423 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
+  padding: clamp(100px, 12vw, 160px) var(--pad-x, 24px) clamp(80px, 10vw, 120px);
+}
+
+@media (min-width: 1024px) {
+  .heroSection {
+    min-height: 100vh;
+    border-radius: 0;
+  }
+}
+
+/* Background Slideshow */
+.slidesTrack {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.slideItem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), visibility 1s;
+  will-change: transform, opacity;
+}
+
+.slideItem.activeSlide {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mediaFill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vignetteOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.9) 100%),
+              linear-gradient(180deg, rgba(0,0,0,0.5) 0%, transparent 35%, transparent 65%, rgba(0,0,0,0.85) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Corner Micro-Texts */
+.cornerTL,
+.cornerTR,
+.cornerBR {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .cornerTL,
+  .cornerTR,
+  .cornerBR {
+    display: flex;
+  }
+}
+
+.cornerTL {
+  top: 100px;
+  left: 48px;
+  align-items: center;
+  gap: 10px;
+}
+
+.heroCornerBadge,
+.heroCardBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: #c59341;
+  background: linear-gradient(135deg, #d89b38 0%, #b8860b 100%);
+  color: #ffffff !important;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.35);
+  width: fit-content;
+}
+
+.heroCardBadge {
+  font-size: 9px;
+  padding: 4px 10px;
+  margin-bottom: 6px;
+}
+
+.microText {
+  font-size: 11px;
+  font-family: monospace;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cornerTR {
+  top: 100px;
+  right: 48px;
+}
+
+.microTextRight {
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: right;
+  margin: 0;
+}
+
+.cornerBR {
+  bottom: 120px;
+  right: 48px;
+  max-width: 320px;
+}
+
+/* Center Giant Title Stack */
+.centerTitleWrap {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+  margin: auto 0;
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  place-items: center;
+}
+
+.displayTitle {
+  grid-area: 1 / 1;
+  font-size: var(--fs-display, clamp(48px, 9.6vw, 168px));
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: var(--ls-display, -0.05em);
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.7s;
+  pointer-events: none;
+}
+
+.displayTitleActive {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.displayTitleHidden {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.titleLineWrap {
+  display: block;
+  overflow: hidden;
+  padding: 4px 0;
+}
+
+.titleLine1,
+.titleLine2 {
+  display: block;
+  transform: translateY(115%);
+  opacity: 0;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.displayTitleActive .titleLine1 {
+  transform: translateY(0%);
+  opacity: 1;
+  transition-delay: 0.05s;
+}
+
+.displayTitleActive .titleLine2 {
+  transform: translateY(0%);
+  opacity: 1;
+  transition-delay: 0.18s;
+}
+
+.displayTitleHidden .titleLine1 {
+  transform: translateY(-30%);
+  opacity: 0;
+  transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+  transition-delay: 0s;
+}
+
+.displayTitleHidden .titleLine2 {
+  transform: translateY(-30%);
+  opacity: 0;
+  transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+  transition-delay: 0s;
+}
+
+/* Bottom Left Frosted Glass Card */
+.bottomLeftCard {
+  position: absolute;
+  bottom: clamp(24px, 4vw, 48px);
+  left: clamp(20px, 3.5vw, 48px);
+  z-index: 10;
+  max-width: min(90vw, 360px);
+}
+
+.glassCardInner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 14px 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.glassCardThumb {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.thumbPic {
+  width: 100%;
+  height: 100%;
+}
+
+.glassCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.glassCardHeading {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.glassCardSub {
+  font-size: 10px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Bottom Right "View Projects" Card */
+.bottomRightCard {
+  position: absolute;
+  bottom: clamp(24px, 4vw, 48px);
+  right: clamp(20px, 3.5vw, 48px);
+  z-index: 10;
+}
+
+.viewProjectsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 14px 20px;
+  color: #ffffff;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.viewProjectsBtn:hover {
+  background: var(--surface-2, #151515);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.viewProjectsLabel {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.arrowCircle {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s, border-color 0.3s;
+}
+
+.viewProjectsBtn:hover .arrowCircle {
+  transform: rotate(45deg);
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #000000;
+}
+
+/* Progress Indicators */
+.indicatorsWrap {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.indicatorTrack {
+  width: 36px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  transition: height 0.2s;
+}
+
+.indicatorTrack:hover {
+  height: 4px;
+}
+
+.indicatorFill {
+  width: 0%;
+  height: 100%;
+  background: var(--accent);
+}
+
+/* Hero Slider Navigation Arrows */
+.heroNavArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 15;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.45);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.heroNavArrow:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.25);
+}
+
+.heroNavArrow:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.heroNavPrev {
+  left: clamp(16px, 3.5vw, 48px);
+}
+
+.heroNavNext {
+  right: clamp(16px, 3.5vw, 48px);
+}
+
+@media (max-width: 640px) {
+  .heroNavArrow {
+    width: 42px;
+    height: 42px;
+  }
+}
+

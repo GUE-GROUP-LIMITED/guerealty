@@ -1,0 +1,426 @@
+{
+  "images": {
+    "film-a-poster": {
+      "width": 1920,
+      "height": 1080,
+      "orientation": "landscape",
+      "original": {
+        "file": "(frame of 11807136-uhd_3840_2160_25fps.mp4)",
+        "width": 1920,
+        "height": 1080
+      },
+      "color": "rgb(24, 24, 24)",
+      "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASoYAA4APu1iqU2ppaOiMAgBMB2JZwAATrkuTdzbM5mIYeAA/p9hm7moafWauOFR368qef3l94OFkdqtfrps5eBosEaw75E3z1qGfyxv6bapQkAA",
+      "sources": {
+        "avif": [
+          {
+            "w": 480,
+            "src": "/media/img/film-a-poster-480.avif"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/film-a-poster-768.avif"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/film-a-poster-1280.avif"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/film-a-poster-1920.avif"
+          }
+        ],
+        "webp": [
+          {
+            "w": 480,
+            "src": "/media/img/film-a-poster-480.webp"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/film-a-poster-768.webp"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/film-a-poster-1280.webp"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/film-a-poster-1920.webp"
+          }
+        ],
+        "jpg": [
+          {
+            "w": 480,
+            "src": "/media/img/film-a-poster-480.jpg"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/film-a-poster-768.jpg"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/film-a-poster-1280.jpg"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/film-a-poster-1920.jpg"
+          }
+        ]
+      }
+    },
+    "film-b-poster": {
+      "width": 1920,
+      "height": 1080,
+      "orientation": "landscape",
+      "original": {
+        "file": "(frame of 16996627_3840_2160_30fps.mp4)",
+        "width": 1920,
+        "height": 1080
+      },
+      "color": "rgb(184, 200, 216)",
+      "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAwCdASoYAA4APu1qrU8ppiQiMAgBMB2JYwC06GlRwdKFy1YAAP5hbv6ptq4x2m2b3fNMWeviZiIHPmfVgxeFCR9KmoxwS5XwAAAA",
+      "sources": {
+        "avif": [
+          {
+            "w": 480,
+            "src": "/media/img/film-b-poster-480.avif"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/film-b-poster-768.avif"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/film-b-poster-1280.avif"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/film-b-poster-1920.avif"
+          }
+        ],
+        "webp": [
+          {
+            "w": 480,
+            "src": "/media/img/film-b-poster-480.webp"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/film-b-poster-768.webp"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/film-b-poster-1280.webp"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/film-b-poster-1920.webp"
+          }
+        ],
+        "jpg": [
+          {
+            "w": 480,
+            "src": "/media/img/film-b-poster-480.jpg"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/film-b-poster-768.jpg"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/film-b-poster-1280.jpg"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/film-b-poster-1920.jpg"
+          }
+        ]
+      }
+    },
+    "tower-dusk": {
+      "width": 1920,
+      "height": 3357,
+      "orientation": "portrait",
+      "original": {
+        "file": "pexels-ennzo-br-486637611-20891847.jpg",
+        "width": 2343,
+        "height": 4096
+      },
+      "color": "rgb(8, 8, 8)",
+      "blur": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAADQBgCdASoYACoAPu1mrE6ppaQiMBVaqTAdiWIAw21A4oAcWehqkp6Wed7syRjdj2KLFTGALvbw13zdwFj7XOAA/rupeqC1oj8QEZpdk/S7RH1PYKxPGKqjYsVh4sIF1D78NxVkO5B0tgTS0c2nahPhwlvH28aXHw++FzDnPpH5cyqpm8iAdt4tGkvW4/moszbr8EPGcI1qkJQmUZF/oico8Cdk80L2tYLA3KfAAAA=",
+      "sources": {
+        "avif": [
+          {
+            "w": 480,
+            "src": "/media/img/tower-dusk-480.avif"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/tower-dusk-768.avif"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/tower-dusk-1280.avif"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/tower-dusk-1920.avif"
+          }
+        ],
+        "webp": [
+          {
+            "w": 480,
+            "src": "/media/img/tower-dusk-480.webp"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/tower-dusk-768.webp"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/tower-dusk-1280.webp"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/tower-dusk-1920.webp"
+          }
+        ],
+        "jpg": [
+          {
+            "w": 480,
+            "src": "/media/img/tower-dusk-480.jpg"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/tower-dusk-768.jpg"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/tower-dusk-1280.jpg"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/tower-dusk-1920.jpg"
+          }
+        ]
+      }
+    },
+    "city-dusk": {
+      "width": 1920,
+      "height": 1280,
+      "orientation": "landscape",
+      "original": {
+        "file": "pexels-raqeebkhan-13456151.jpg",
+        "width": 5472,
+        "height": 3648
+      },
+      "color": "rgb(8, 24, 24)",
+      "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAwCdASoYABAAPu1kqk4ppaQiMAgBMB2JQBOgA9ISoIDYOOjddGAA+E+kRWr0071TNAe3GBuvAmxOaIRWGkwSXODDaidFppknh7npUIAAAA==",
+      "sources": {
+        "avif": [
+          {
+            "w": 480,
+            "src": "/media/img/city-dusk-480.avif"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/city-dusk-768.avif"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/city-dusk-1280.avif"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/city-dusk-1920.avif"
+          }
+        ],
+        "webp": [
+          {
+            "w": 480,
+            "src": "/media/img/city-dusk-480.webp"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/city-dusk-768.webp"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/city-dusk-1280.webp"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/city-dusk-1920.webp"
+          }
+        ],
+        "jpg": [
+          {
+            "w": 480,
+            "src": "/media/img/city-dusk-480.jpg"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/city-dusk-768.jpg"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/city-dusk-1280.jpg"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/city-dusk-1920.jpg"
+          }
+        ]
+      }
+    },
+    "glass-towers": {
+      "width": 1920,
+      "height": 1280,
+      "orientation": "landscape",
+      "original": {
+        "file": "pexels-realcereal-15269604.jpg",
+        "width": 6000,
+        "height": 4000
+      },
+      "color": "rgb(184, 200, 232)",
+      "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBACdASoYABAAPu1oqk6ppiQiMAgBMB2JZACdACIGo5jrx71T8NiHQAD8ybTJH9upMeiW+HOAa4KEJhLUjBxPpe6b0ScWUN1IvTgpFMSEAkbvRbMfhRE7GIGTG+plFokAAA==",
+      "sources": {
+        "avif": [
+          {
+            "w": 480,
+            "src": "/media/img/glass-towers-480.avif"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/glass-towers-768.avif"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/glass-towers-1280.avif"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/glass-towers-1920.avif"
+          }
+        ],
+        "webp": [
+          {
+            "w": 480,
+            "src": "/media/img/glass-towers-480.webp"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/glass-towers-768.webp"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/glass-towers-1280.webp"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/glass-towers-1920.webp"
+          }
+        ],
+        "jpg": [
+          {
+            "w": 480,
+            "src": "/media/img/glass-towers-480.jpg"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/glass-towers-768.jpg"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/glass-towers-1280.jpg"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/glass-towers-1920.jpg"
+          }
+        ]
+      }
+    },
+    "balconies": {
+      "width": 1920,
+      "height": 3414,
+      "orientation": "portrait",
+      "original": {
+        "file": "pexels-tobilobababs-36611315.jpg",
+        "width": 3941,
+        "height": 7007
+      },
+      "color": "rgb(24, 24, 40)",
+      "blur": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAQBgCdASoYACsAPu1srVEppaQipWzJMB2JZwDCgAZHSC0wyqwh0RaLo6vEQXdun6d6cPSPamzUSAAA/sOhZwrFUAyOH6DXTBx98rgz1VZwA46MtJg/xwNYuhI6aaxJPhoJb4kg9oRAXQwO0KE9PKxvH14KvDpbBMS+ItxAl8Z6NGBTv9b3qpgAAAA=",
+      "sources": {
+        "avif": [
+          {
+            "w": 480,
+            "src": "/media/img/balconies-480.avif"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/balconies-768.avif"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/balconies-1280.avif"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/balconies-1920.avif"
+          }
+        ],
+        "webp": [
+          {
+            "w": 480,
+            "src": "/media/img/balconies-480.webp"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/balconies-768.webp"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/balconies-1280.webp"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/balconies-1920.webp"
+          }
+        ],
+        "jpg": [
+          {
+            "w": 480,
+            "src": "/media/img/balconies-480.jpg"
+          },
+          {
+            "w": 768,
+            "src": "/media/img/balconies-768.jpg"
+          },
+          {
+            "w": 1280,
+            "src": "/media/img/balconies-1280.jpg"
+          },
+          {
+            "w": 1920,
+            "src": "/media/img/balconies-1920.jpg"
+          }
+        ]
+      }
+    }
+  },
+  "videos": {
+    "film-a": {
+      "mp4": "/media/video/film-a.mp4",
+      "webm": "/media/video/film-a.webm",
+      "poster": "film-a-poster",
+      "original": "11807136-uhd_3840_2160_25fps.mp4"
+    },
+    "film-b": {
+      "mp4": "/media/video/film-b.mp4",
+      "webm": "/media/video/film-b.webm",
+      "poster": "film-b-poster",
+      "original": "16996627_3840_2160_30fps.mp4"
+    }
+  }
+}

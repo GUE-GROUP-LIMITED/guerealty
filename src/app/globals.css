@@ -1,118 +1,279 @@
-
 @import "tailwindcss";
 
+/* ==========================================================================
+   GUE Realty — design tokens
+   ========================================================================== */
 :root {
-  /* Light theme colors */
-  --background: 245 247 250; /* #F5F7FA */
-  --foreground: 26 43 94; /* #1A2B5E */
-  --primary: 26 43 94; /* #1A2B5E */
-  --primary-foreground: 255 255 255; /* white */
-  --secondary: 26 122 60; /* #1A7A3C */
-  --border: 226 232 240; /* #E2E8F0 */
-  --card: 255 255 255; /* white */
-  --muted: 237 240 245; /* #EDF0F5 */
-  --accent: 34 160 80; /* #22A050 */
+  /* Core palette */
+  --bg: #000000;
+  --surface: #0e0e0e;
+  --surface-2: #151515;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.22);
+  --text: #ffffff;
+  --muted: #8a8a8a;
+  --accent: #e8b26a;
+  --accent-cool: #3b6fb6;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-blur: 16px;
+
+  /* Radii */
+  --r-card: 24px;
+  --r-pill: 999px;
+  --r-frame: 36px;
+
+  /* Type */
+  --font: var(--font-inter-tight), "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --fs-display: clamp(48px, 9.6vw, 168px);
+  --fs-h2: clamp(38px, 6vw, 104px);
+  --fs-statement: clamp(24px, 3.3vw, 54px);
+  --fs-stat: clamp(28px, 2.6vw, 42px);
+  --fs-body: 15px;
+  --fs-small: 13px;
+  --fs-micro: 11px;
+  --ls-display: -0.05em;
+  --ls-tight: -0.02em;
+
+  /* Layout */
+  --frame-x: 0px;
+  --frame-top: 0px;
+  --pad-x: clamp(16px, 4vw, 64px);
+  --gutter: 16px;
+  --section-y: clamp(120px, 14vw, 200px);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-wipe: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Legacy tokens still referenced by tailwind.config.js / old pages */
+  --background: 245 247 250;
+  --foreground: 26 43 94;
+  --primary: 26 43 94;
+  --primary-foreground: 255 255 255;
+  --secondary: 26 122 60;
+  --border: 226 232 240;
+  --card: 255 255 255;
+  --muted-rgb: 237 240 245;
+
+  color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 768px) {
   :root {
-    --background: 15 26 58; /* #0F1A3A */
-    --foreground: 245 247 250; /* #F5F7FA */
-    --primary: 45 74 140; /* #2D4A8C */
-    --primary-foreground: 245 247 250; /* #F5F7FA */
-    --secondary: 26 122 60; /* #1A7A3C */
-    --border: 74 85 104; /* #4A5568 */
-    --card: 26 43 94; /* #1A2B5E */
-    --muted: 26 43 94; /* #1A2B5E */
-    --accent: 34 160 80; /* #22A050 */
+    --gutter: 24px;
+    --frame-x: 0px;
+    --frame-top: 0px;
   }
 }
 
-* {
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  background: var(--bg);
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
 }
 
 body {
-  background: rgb(var(--background));
-  color: rgb(var(--foreground));
-  font-family: 'Syne', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  background: var(--bg) !important;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+img,
+video,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--accent);
+  color: #000;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: rgb(var(--muted));
+  background: #050505;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: rgb(var(--border));
+  background: #2a2a2a;
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--primary));
+  background: var(--accent);
 }
 
-/* Smooth transitions for theme changes */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+/* Custom cursor hides the native one only when it is active */
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
 }
 
-/* Fix for Material-UI components integration */
-.MuiCssBaseline-root {
-  color: rgb(var(--foreground));
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+.wrap {
+  width: 100%;
+  padding-inline: var(--pad-x);
 }
 
-/* Custom utility classes */
-.gradient-primary {
-  background: linear-gradient(135deg, rgb(var(--primary)) 0%, rgb(var(--accent)) 100%);
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
 }
 
-.gradient-secondary {
-  background: linear-gradient(135deg, rgb(var(--secondary)) 0%, #ffecb3 100%);
+.micro {
+  font-size: var(--fs-micro);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--muted);
 }
 
-/* Animation utilities */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+.label {
+  font-size: var(--fs-small);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--muted);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.glass {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--line);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10000;
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* Underline wipe for text links */
+.link-wipe {
+  position: relative;
+  display: inline-block;
+}
+.link-wipe::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.6s var(--ease-wipe);
+}
+.link-wipe:hover::after,
+.link-wipe:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* SplitText masks */
+.split-line {
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+
+/* ==========================================================================
+   Legacy pages (until redesigned) — keep them readable inside the dark frame
+   ========================================================================== */
+.legacy-main > main:not([data-page="v2"]) {
+  background: #f5f7fa;
+  color: #1a2b5e;
+  font-family: var(--font);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* Button hover effects */
-.btn-hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(26, 43, 94, 0.3);
-  transition: all 0.3s ease;
-}
-
-/* Glass effect */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }

@@ -1,4 +1,4 @@
-import Services from '../components/Services';
+import ServicesClient from "./ServicesClient";
 
 export const metadata = {
   title: "Services",
@@ -11,8 +11,8 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <main>
-      <Services />
+    <main data-page="v2">
+      <ServicesClient />
     </main>
   );
 }

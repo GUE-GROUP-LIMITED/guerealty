@@ -1,0 +1,11 @@
+.heading {
+  margin: 0;
+  overflow: hidden;
+}
+
+.lineWrap {
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+  display: block;
+}

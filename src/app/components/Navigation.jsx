@@ -1,231 +1,202 @@
 "use client";
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import BrandLogo from './BrandLogo';
-
-const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Properties', href: '/properties' },
-  { label: 'Contact', href: '/contact' },
-];
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { gsap } from "../../lib/gsap";
+import { navItems, navCta } from "../../content/site";
+import MagneticButton from "../../components/ui/MagneticButton";
+import styles from "./Navigation.module.css";
 
 export default function Navigation() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const navWrapRef = useRef(null);
+  const menuRef = useRef(null);
+  const linksRef = useRef([]);
 
+  // Scroll direction detection (hide on scroll down, show on scroll up)
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 100 && currentScrollY > lastScrollY.current + 8) {
+        setHidden(true);
+      } else if (currentScrollY < lastScrollY.current - 12 || currentScrollY <= 80) {
+        setHidden(false);
+      }
+      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const drawer = (
-    <Box sx={{
-      width: 280,
-      height: '100%',
-      background: 'linear-gradient(160deg, #0F1A3A 0%, #1A2B5E 100%)',
-      color: 'white',
-      display: 'flex',
-      flexDirection: 'column',
-    }}>
-      {/* Mobile header */}
-      <Box sx={{
-        p: 3,
-        borderBottom: '1px solid rgba(255,255,255,0.12)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      }}>
-        {/* Red–green gradient bar top */}
-        <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3,
-          background: 'linear-gradient(90deg, #CC2020 0%, #1A7A3C 60%, transparent 100%)' }} />
-        <BrandLogo variant="mobile" />
-        <IconButton onClick={() => setMobileOpen(false)} sx={{ color: 'white' }}>
-          <CloseIcon />
-        </IconButton>
-      </Box>
+  // Staggered reveal for mobile menu
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+      gsap.to(menuRef.current, {
+        opacity: 1,
+        visibility: "visible",
+        duration: 0.4,
+        ease: "power3.out",
+      });
+      gsap.fromTo(
+        linksRef.current,
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: "power3.out",
+          delay: 0.15,
+        }
+      );
+    } else {
+      document.body.style.overflow = "";
+      if (menuRef.current) {
+        gsap.to(menuRef.current, {
+          opacity: 0,
+          duration: 0.3,
+          ease: "power3.in",
+          onComplete: () => {
+            if (menuRef.current) menuRef.current.style.visibility = "hidden";
+          },
+        });
+      }
+    }
+  }, [mobileOpen]);
 
-      <List sx={{ flex: 1, pt: 2 }}>
-        {navItems.map((item) => (
-          <ListItem
-            key={item.label}
-            component={Link}
-            href={item.href}
-            onClick={() => setMobileOpen(false)}
-            sx={{
-              cursor: 'pointer',
-              mx: 2,
-              borderRadius: 2,
-              mb: 0.5,
-              backgroundColor: pathname === item.href ? 'rgba(26,122,60,0.25)' : 'transparent',
-              borderLeft: pathname === item.href ? '3px solid #1A7A3C' : '3px solid transparent',
-              transition: 'all 0.2s ease',
-              '&:hover': {
-                backgroundColor: 'rgba(255,255,255,0.08)',
-                transform: 'translateX(4px)',
-              },
-            }}
-          >
-            <ListItemText
-              primary={item.label}
-              primaryTypographyProps={{ fontWeight: 600, fontSize: '1rem' }}
-            />
-          </ListItem>
-        ))}
-      </List>
-
-      <Box sx={{ p: 3, borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-        <Button
-          fullWidth
-          component={Link}
-          href="/contact"
-          onClick={() => setMobileOpen(false)}
-          variant="contained"
-          sx={{
-            py: 1.5,
-            fontSize: '0.95rem',
-            fontWeight: 700,
-            borderRadius: 2,
-            background: 'linear-gradient(135deg, #1A7A3C 0%, #22A050 100%)',
-            '&:hover': { background: 'linear-gradient(135deg, #125A2C 0%, #1A7A3C 100%)' },
-          }}
-        >
-          Contact Us
-        </Button>
-      </Box>
-    </Box>
-  );
+  // Close menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <>
-      <AppBar
-        position="sticky"
-        elevation={0}
-        sx={{
-          backgroundColor: scrolled ? 'rgba(15,26,58,0.97)' : '#0F1A3A',
-          backdropFilter: 'blur(20px)',
-          boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.35)' : 'none',
-          transition: 'all 0.3s ease',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
-          // Brand gradient underline
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: '2px',
-            background: 'linear-gradient(90deg, #CC2020 0%, #1A7A3C 55%, transparent 100%)',
-            pointerEvents: 'none',
-          },
-        }}
+      <header
+        ref={navWrapRef}
+        className={`${styles.header} ${hidden && !mobileOpen ? styles.hidden : ""}`}
       >
-        <Container maxWidth="xl">
-          <Toolbar sx={{ px: { xs: 1, sm: 2 }, py: { xs: 0.5, sm: 1 }, minHeight: { xs: 64, sm: 72 } }}>
-            <BrandLogo />
-            <Box sx={{ flexGrow: 1 }} />
+        <div className={styles.navRow}>
+          {/* Top-Left Floating Glass Pill Nav */}
+          <nav className={styles.glassPillNav} aria-label="Main Navigation">
+            <Link href="/" className={styles.logoBadge} aria-label="GUE Realty Home">
+              <img
+                src="/logo.png"
+                alt="GUE Realty Limited"
+                className={styles.navLogoImg}
+                width={28}
+                height={28}
+              />
+            </Link>
+            <div className={styles.desktopLinks}>
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={`${styles.navLink} ${isActive ? styles.active : ""}`}
+                  >
+                    {item.label}
+                    {isActive && <span className={styles.activeDot} />}
+                  </Link>
+                );
+              })}
+            </div>
+          </nav>
 
-            {/* Desktop nav */}
-            <Box sx={{ display: { xs: 'none', lg: 'flex' }, gap: 0.5, alignItems: 'center' }}>
-              {navItems.map((item) => (
-                <Button
-                  key={item.label}
-                  component={Link}
-                  href={item.href}
-                  sx={{
-                    color: pathname === item.href ? '#22A050' : 'rgba(255,255,255,0.85)',
-                    fontWeight: pathname === item.href ? 700 : 500,
-                    fontSize: '0.9rem',
-                    px: 2,
-                    py: 1.25,
-                    borderRadius: 2,
-                    textTransform: 'none',
-                    position: 'relative',
-                    transition: 'all 0.2s ease',
-                    '&:hover': { color: 'white', backgroundColor: 'rgba(255,255,255,0.08)', transform: 'translateY(-1px)' },
-                    '&::after': {
-                      content: '""',
-                      position: 'absolute',
-                      bottom: 4,
-                      left: '50%',
-                      width: pathname === item.href ? '70%' : 0,
-                      height: '2px',
-                      backgroundColor: '#1A7A3C',
-                      borderRadius: '2px',
-                      transition: 'all 0.25s ease',
-                      transform: 'translateX(-50%)',
-                    },
-                    '&:hover::after': { width: '70%' },
-                  }}
-                >
-                  {item.label}
-                </Button>
-              ))}
+          {/* Top-Right CTA Pill + Mobile Toggle */}
+          <div className={styles.navActions}>
+            <MagneticButton strength={0.3}>
+              <Link href={navCta.href} className={styles.ctaPill}>
+                <span>{navCta.label}</span>
+                <span className={styles.ctaIcon}>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </Link>
+            </MagneticButton>
 
-              <Button
-                component={Link}
-                href="/contact"
-                variant="contained"
-                color="secondary"
-                sx={{ ml: 2, px: 3, py: 1.25, fontSize: '0.875rem', borderRadius: 2 }}
+            {/* Mobile Hamburger Button */}
+            <button
+              type="button"
+              className={styles.mobileToggle}
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+            >
+              <div className={`${styles.burgerIcon} ${mobileOpen ? styles.open : ""}`}>
+                <span />
+                <span />
+              </div>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Full-screen Mobile Menu */}
+      <div
+        ref={menuRef}
+        className={styles.mobileMenu}
+        aria-hidden={!mobileOpen}
+      >
+        <div className={styles.mobileMenuContent}>
+          <div className={styles.mobileBrandHeader}>
+            <img
+              src="/logo.png"
+              alt="GUE Realty Limited"
+              width={36}
+              height={36}
+              className={styles.navLogoImg}
+            />
+            <span className={styles.mobileBrandText}>GUE REALTY</span>
+          </div>
+
+          <div className={styles.mobileNavLinks}>
+            {navItems.map((item, idx) => (
+              <div
+                key={item.label}
+                ref={(el) => (linksRef.current[idx] = el)}
+                className={styles.mobileLinkItem}
               >
-                Get in Touch
-              </Button>
-            </Box>
+                <Link
+                  href={item.href}
+                  className={`${styles.mobileLink} ${pathname === item.href ? styles.activeMobile : ""}`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <span className={styles.mobileLinkIndex}>0{idx + 1}</span>
+                  <span className={styles.mobileLinkLabel}>{item.label}</span>
+                </Link>
+              </div>
+            ))}
+          </div>
 
-            {/* Mobile menu */}
-            <IconButton
-              onClick={() => setMobileOpen(true)}
-              sx={{
-                display: { xs: 'flex', lg: 'none' },
-                ml: 1,
-            borderColor: 'white',
-            color: 'white',
-            '&:hover': {
-                  backgroundColor: 'rgba(255,255,255,0.2)',
-                },
-          }}
-        >
-              <MenuIcon />
-            </IconButton>
-          </Toolbar>
-        </Container>
-      </AppBar>
-
-      {/* Mobile Drawer */}
-      <Drawer
-        variant="temporary"
-        anchor="right"
-        open={mobileOpen}
-        onClose={() => setMobileOpen(false)}
-        ModalProps={{
-          keepMounted: false,
-          disableScrollLock: true,
-        }}
-        sx={{ display: { xs: 'block', lg: 'none' }, '& .MuiDrawer-paper': { width: 280 } }}
-      >
-        {drawer}
-      </Drawer>
+          <div
+            ref={(el) => (linksRef.current[navItems.length] = el)}
+            className={styles.mobileCtaWrap}
+          >
+            <Link
+              href={navCta.href}
+              className={styles.mobileCtaBtn}
+              onClick={() => setMobileOpen(false)}
+            >
+              <span>{navCta.label}</span>
+              <svg width="14" height="14" viewBox="0 0 12 12" fill="none">
+                <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+            <p className={styles.mobileGroupNote}>
+              GUE REALTY LIMITED · RC 8371222<br />
+              A GUE GROUP COMPANY
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

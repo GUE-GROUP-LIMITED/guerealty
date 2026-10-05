@@ -1,10 +1,17 @@
-import { Syne, JetBrains_Mono } from "next/font/google";
+import "@fontsource/inter-tight/400.css";
+import "@fontsource/inter-tight/500.css";
+import "@fontsource/inter-tight/600.css";
+import "@fontsource/inter-tight/700.css";
 import "./globals.css";
 import "./accessibility.css";
 import Providers from "./Providers";
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import ClientOnly from './components/ClientOnly';
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import SiteFrame from "../components/layout/SiteFrame";
+import SmoothScroll from "../components/layout/SmoothScroll";
+import Cursor from "../components/layout/Cursor";
+import PageTransition from "../components/layout/PageTransition";
+import Preloader from "../components/layout/Preloader";
 import {
   DEFAULT_OG_IMAGE,
   getBaseUrl,
@@ -12,16 +19,6 @@ import {
   SITE_NAME,
   SITE_TITLE,
 } from "../lib/site";
-
-const syneSans = Syne({
-  variable: "--font-syne-sans",
-  subsets: ["latin"],
-});
-
-const jetBrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   metadataBase: new URL(getBaseUrl()),
@@ -73,21 +70,19 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
-      { url: '/logo.png', sizes: '16x16', type: 'image/png' },
+      { url: "/logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo.png", sizes: "16x16", type: "image/png" },
     ],
-    shortcut: '/logo.png',
-    apple: [
-      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
-    ],
+    shortcut: "/logo.png",
+    apple: [{ url: "/logo.png", sizes: "180x180", type: "image/png" }],
     other: [
       {
-        rel: 'icon',
-        url: '/logo.png',
+        rel: "icon",
+        url: "/logo.png",
       },
     ],
   },
-  manifest: '/manifest.json',
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }) {
@@ -97,9 +92,7 @@ export default function RootLayout({ children }) {
     name: SITE_NAME,
     url: getBaseUrl(),
     logo: `${getBaseUrl()}${DEFAULT_OG_IMAGE}`,
-    sameAs: [
-      "https://www.guegroup.com",
-    ],
+    sameAs: ["https://www.guegroup.com"],
   };
 
   const websiteJsonLd = {
@@ -115,8 +108,12 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" suppressHydrationWarning={true} data-scroll-behavior="smooth">
-      <body className={`${syneSans.variable} ${jetBrainsMono.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased">
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -125,12 +122,32 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+
         <Providers>
-          <ClientOnly>
-            <Navigation />
-          </ClientOnly>
-          {children}
-          <Footer />
+          <SmoothScroll>
+            {/* Interactive Cursor */}
+            <Cursor />
+
+            {/* Initial Preloader */}
+            <Preloader />
+
+            {/* Curtain Route Transitions */}
+            <PageTransition />
+
+            {/* Outer Rounded Frame */}
+            <SiteFrame>
+              {/* Floating Pill Navigation */}
+              <Navigation />
+
+              {/* Main Content Area */}
+              <div id="main-content" className="legacy-main" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                {children}
+              </div>
+
+              {/* Global Footer */}
+              <Footer />
+            </SiteFrame>
+          </SmoothScroll>
         </Providers>
       </body>
     </html>
